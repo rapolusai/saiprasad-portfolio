@@ -1,6 +1,6 @@
 import { access, readFile } from "node:fs/promises";
 
-const required = ["index.html", "project.html", "admin.html", "assets/css/styles.css", "assets/js/site.js", "assets/js/project.js", "assets/js/admin.js", "content/site.json", "content/projects.json"];
+const required = ["index.html", "project.html", "contact.html", "admin.html", "assets/css/styles.css", "assets/js/site.js", "assets/js/project.js", "assets/js/contact.js", "assets/js/admin.js", "content/site.json", "content/projects.json"];
 await Promise.all(required.map((path) => access(path)));
 
 const site = JSON.parse(await readFile("content/site.json", "utf8"));

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c12">
+  <meta name="description" content="Contact senior software engineer Saiprasad Rapolu about engineering roles, architecture consulting, or product development.">
+  <title>Contact — Saiprasad Rapolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="contact-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-glow page-glow--one"></div><div class="page-glow page-glow--two"></div>
+  <header class="site-header is-solid">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-copy"><strong>Saiprasad</strong><small>Software Engineer</small></span></a>
+    <nav class="project-nav" aria-label="Contact navigation"><a href="index.html">← Home</a><a href="index.html#work">View projects</a></nav>
+  </header>
+
+  <main id="main" class="contact-page__main">
+    <section class="contact-page__intro reveal">
+      <p class="eyebrow"><span class="status-dot"></span> Open to meaningful conversations</p>
+      <h1>Let’s build something<br><em>worth relying on.</em></h1>
+      <p>Tell me about the engineering challenge, role, or product you’re exploring. I’ll reply with a practical next step.</p>
+      <div class="contact-details" aria-label="Contact details">
+        <a href="mailto:rapolusai@gmail.com"><small>Email</small><strong>rapolusai@gmail.com</strong><span>↗</span></a>
+        <a href="tel:+919963659143"><small>Phone</small><strong>+91 99636 59143</strong><span>↗</span></a>
+        <div><small>Based in</small><strong>Hyderabad, India</strong><span>IST</span></div>
+      </div>
+      <div class="contact-profile-links">
+        <a data-social="linkedin" href="https://in.linkedin.com/in/rapolusai" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a data-social="github" href="https://github.com/rapolusai" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+
+    <section class="contact-form-card reveal" aria-labelledby="contact-form-title">
+      <div class="contact-form-card__heading"><p class="mono-label">PROJECT ENQUIRY / 01</p><h2 id="contact-form-title">Start the conversation.</h2><p>No account required. Submitting opens a prepared email in your mail application.</p></div>
+      <form data-contact-form>
+        <div class="contact-form-grid">
+          <label>Your name<input name="name" autocomplete="name" placeholder="How should I address you?" required></label>
+          <label>Your email<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required></label>
+          <label class="span-2">What would you like to discuss?
+            <select name="topic" required>
+              <option value="">Choose a topic</option>
+              <option>Senior engineering opportunity</option>
+              <option>Architecture or technical consulting</option>
+              <option>Product development</option>
+              <option>Project collaboration</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label class="span-2">Project or message<textarea name="message" rows="7" placeholder="Share the context, challenge, timeline, or outcome you have in mind." required></textarea></label>
+        </div>
+        <div class="contact-form-footer"><p>Your message stays on your device until your email application opens.</p><button class="button button--primary" type="submit">Prepare email <span>↗</span></button></div>
+        <p class="contact-form-status" data-contact-status role="status" aria-live="polite"></p>
+      </form>
+      <div class="contact-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-copy"><strong>Saiprasad Rapolu</strong><small>Engineering with intent.</small></span></a><p>© <span data-year></span> Saiprasad Rapolu.</p><a href="admin.html" class="admin-link">Studio</a></footer>
+  <script type="module" src="assets/js/contact.js"></script>
+</body>
+</html>
