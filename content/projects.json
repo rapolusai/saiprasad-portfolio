@@ -70,7 +70,23 @@
         "Inventory, sales, and operational expense tracking",
         "PDF reporting and SMS communication workflows"
       ],
-      "images": [],
+      "images": [
+        {
+          "path": "assets/uploads/swimmer/01-dashboard-overview.png",
+          "alt": "Swimmer Club dashboard showing membership, trainer, registration, revenue, and operational analytics",
+          "caption": "Operations dashboard: membership status, trainer capacity, registration trends, time-slot distribution, specializations, and revenue signals in one view."
+        },
+        {
+          "path": "assets/uploads/swimmer/02-admin-login.png",
+          "alt": "Swimmer Club administrator login screen",
+          "caption": "Secure entry point for authorized club administrators."
+        },
+        {
+          "path": "assets/uploads/swimmer/03-system-settings.png",
+          "alt": "Swimmer Club system settings for fees, time slots, attendance, database, and communication",
+          "caption": "Configurable operations: fee structures, member and professional time slots, attendance rules, database backup and restore, and messaging."
+        }
+      ],
       "liveUrl": "",
       "repoUrl": ""
     },
