@@ -3,6 +3,50 @@
   "updatedAt": "2026-08-11T00:00:00.000Z",
   "projects": [
     {
+      "id": "system-resource-monitor",
+      "slug": "system-resource-monitor",
+      "title": "System Resource Monitor (SRM)",
+      "summary": "A production-minded Java desktop platform for organizing infrastructure by project and environment, collecting live host metrics, exploring history, comparing systems, and generating operational reports.",
+      "category": "Observability platform",
+      "status": "published",
+      "featured": true,
+      "year": "2026",
+      "role": "Product architect & engineer",
+      "timeline": "Active development",
+      "technologies": ["Java 21", "JavaFX", "Spring Boot", "MySQL", "OSHI", "Liquibase"],
+      "challenge": "Infrastructure monitoring becomes difficult to reason about when projects, environments, hosts, metric history, alerts, and reporting live in separate tools. SRM needed to make a large monitoring surface understandable from one desktop workspace while remaining responsive during continuous collection. It also needed to distinguish unsupported readings from genuine zero values, retain useful history without unbounded storage, and support both local machines today and a larger remote-system model in the future.",
+      "solution": "I designed SRM as a Spring Boot and JavaFX desktop application with a structured inventory of projects, Development/QA/UAT/Production environments, systems, and reusable monitoring profiles. OSHI provides capability-aware Windows and Linux collection for CPU, memory, disk, network, process, JVM, application-uptime, and connection-pool signals. Virtual-thread dispatch, a bounded ingestion queue, batched MySQL writes, fixed-size live buffers, and scheduled aggregation keep collection work away from the interface. Liquibase owns schema evolution. The workspace combines live dashboards, historical analysis, multi-system comparison, report generation, notification workflows, light/dark themes, and persistent application settings.",
+      "outcome": "SRM now provides an end-to-end operational workspace rather than a collection of disconnected charts. Users can configure systems once, apply reusable profiles, watch current health, move back through raw or aggregated history, compare the same signal across machines, and generate PDF/CSV reports without blocking collection. The delivery pipeline verifies Java 21 builds on Windows and Linux, exercises MySQL integration through Testcontainers, runs CodeQL analysis, and prepares signed release artifacts from version tags.",
+      "future": "The next major direction is remote collection through the planned PERFMON agent, with secure onboarding and fleet-scale operations for 100+ systems. Additional adapters can extend the existing metric catalog into application requests, messaging and caches, Elasticsearch, platform health, and deeper database telemetry. Longer term, anomaly correlation and guided incident summaries can reduce investigation time while preserving the capability-aware data model and clear user control.",
+      "highlights": [
+        "Project, environment, system, and reusable monitoring-profile management",
+        "Live CPU, memory, disk, network, process, JVM, uptime, and connection-pool telemetry",
+        "Historical analysis with raw or aggregate resolution and event overlays",
+        "Side-by-side system comparison with average, minimum, maximum, P50, P95, and P99 statistics",
+        "Background PDF report generation with optional CSV exports",
+        "Notification Center, retention controls, theme settings, and CI security gates"
+      ],
+      "images": [
+        {
+          "path": "assets/uploads/srm/01-projects-environments-systems-profiles.png",
+          "alt": "SRM project, environment, system inventory, and monitoring profile screens",
+          "caption": "Configuration and inventory: projects, environments, systems, and reusable monitoring profiles."
+        },
+        {
+          "path": "assets/uploads/srm/02-live-history-comparison.png",
+          "alt": "SRM live metrics, historical analysis, and system comparison screens",
+          "caption": "Monitoring and analysis: live signals, historical event context, and multi-system comparison."
+        },
+        {
+          "path": "assets/uploads/srm/03-reports-notifications-settings.png",
+          "alt": "SRM report center, notifications, and application settings screens",
+          "caption": "Operational workflows: report generation, PDF preview, notifications, and application settings."
+        }
+      ],
+      "liveUrl": "",
+      "repoUrl": ""
+    },
+    {
       "id": "architecture-platform",
       "slug": "scalable-enterprise-platform",
       "title": "Scalable Enterprise Platform",

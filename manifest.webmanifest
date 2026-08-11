@@ -3,7 +3,7 @@
   "short_name": "SR.DEV",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07110f",
-  "theme_color": "#07110f",
+  "background_color": "#0a0c12",
+  "theme_color": "#0a0c12",
   "description": "Senior software engineer portfolio and project stories."
 }

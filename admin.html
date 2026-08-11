@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0b1211">
+  <meta name="theme-color" content="#0a0c12">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.github.com; base-uri 'self'; form-action 'self'">
   <title>Project Studio — Saiprasad Rapolu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="admin-page">
@@ -20,18 +20,17 @@
 
   <main class="admin-shell">
     <section class="admin-intro">
-      <div><p class="eyebrow">Private publishing workspace</p><h1>Turn shipped work into <em>clear stories.</em></h1></div>
-      <p>This studio commits updates and screenshots directly to your GitHub repository. Your deployment workflow publishes them automatically.</p>
+      <div><p class="eyebrow">Owner-only publishing workspace</p><h1>Project stories,<br><em>under your control.</em></h1></div>
+      <p>Access is restricted to your verified GitHub identity. Once signed in, updates and screenshots publish through your repository’s deployment workflow.</p>
     </section>
 
     <section class="admin-connect" data-connect-panel>
-      <div class="admin-connect__copy"><span class="step-number">01</span><div><h2>Connect the repository</h2><p>Your access token stays in this browser tab only and is never added to the website or repository.</p></div></div>
+      <div class="admin-connect__copy"><span class="login-shield">SR</span><div><p class="eyebrow">Secure sign in</p><h2>Continue as @rapolusai</h2><p>The Studio verifies your GitHub identity before allowing repository access. Your token stays in this browser tab only.</p></div></div>
       <form class="connect-form" data-connect-form>
-        <label>GitHub owner<input name="owner" autocomplete="username" placeholder="your-github-username" required></label>
+        <label class="token-field">Fine-grained GitHub token<input name="token" type="password" autocomplete="off" placeholder="github_pat_…" required><small>Repository access: this portfolio only · Contents: Read and write</small></label>
         <label>Repository<input name="repo" placeholder="portfolio" required></label>
         <label>Branch<input name="branch" value="main" required></label>
-        <label class="token-field">Fine-grained access token<input name="token" type="password" autocomplete="off" placeholder="github_pat_…" required><small>Required permission: Contents → Read and write</small></label>
-        <button class="button button--primary" type="submit">Connect securely <span>↗</span></button>
+        <button class="button button--primary" type="submit">Verify and enter <span>↗</span></button>
       </form>
       <details class="token-help"><summary>How do I create the right token?</summary><ol><li>Open GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.</li><li>Select only this portfolio repository.</li><li>Grant <strong>Contents: Read and write</strong>, then generate the token.</li><li>Paste it above. It is held only for this tab.</li></ol></details>
     </section>

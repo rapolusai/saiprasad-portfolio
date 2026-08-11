@@ -1,5 +1,6 @@
 import { escapeHtml, fetchJson, initials, projectHref, CONTENT_PATH } from "./shared.js";
 
+const ADMIN_GITHUB_LOGIN = "rapolusai";
 const state = {
   credentials: null,
   content: { version: 1, updatedAt: new Date().toISOString(), projects: [] },
@@ -44,9 +45,18 @@ function savedRepository() {
 function fillSavedRepository() {
   const saved = savedRepository();
   if (!saved) return;
-  connectForm.elements.owner.value = saved.owner || "";
   connectForm.elements.repo.value = saved.repo || "";
   connectForm.elements.branch.value = saved.branch || "main";
+}
+
+async function verifyAdminIdentity(token) {
+  const response = await fetch("https://api.github.com/user", {
+    headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${token}`, "X-GitHub-Api-Version": "2022-11-28" }
+  });
+  if (!response.ok) throw new Error("GitHub could not verify this sign-in token.");
+  const user = await response.json();
+  if (user.login?.toLowerCase() !== ADMIN_GITHUB_LOGIN) throw new Error(`Access denied. This Studio is restricted to @${ADMIN_GITHUB_LOGIN}.`);
+  return user;
 }
 
 function bytesToBase64(bytes) {
@@ -96,7 +106,7 @@ function setConnected(connected) {
   connectPanel.hidden = connected;
   studio.hidden = !connected;
   connectionState.classList.toggle("is-connected", connected);
-  connectionState.innerHTML = `<i></i>${connected ? "Repository connected" : "Not connected"}`;
+  connectionState.innerHTML = `<i></i>${connected ? `@${ADMIN_GITHUB_LOGIN} connected` : "Not connected"}`;
 }
 
 connectForm.addEventListener("submit", async (event) => {
@@ -105,22 +115,23 @@ connectForm.addEventListener("submit", async (event) => {
   submit.disabled = true;
   submit.textContent = "Connecting…";
   const data = new FormData(connectForm);
-  state.credentials = { owner: data.get("owner").trim(), repo: data.get("repo").trim(), branch: data.get("branch").trim(), token: data.get("token").trim() };
+  state.credentials = { owner: ADMIN_GITHUB_LOGIN, repo: data.get("repo").trim(), branch: data.get("branch").trim(), token: data.get("token").trim() };
   try {
+    await verifyAdminIdentity(state.credentials.token);
     await github("");
     await loadRepositoryContent();
-    localStorage.setItem("portfolio-repository", JSON.stringify({ owner: state.credentials.owner, repo: state.credentials.repo, branch: state.credentials.branch }));
+    localStorage.setItem("portfolio-repository", JSON.stringify({ repo: state.credentials.repo, branch: state.credentials.branch }));
     sessionStorage.setItem("portfolio-github-token", state.credentials.token);
     setConnected(true);
     renderStoryList();
     selectProject(state.content.projects[0]?.id || null);
-    showToast("Repository connected securely.");
+    showToast(`Signed in as @${ADMIN_GITHUB_LOGIN}.`);
   } catch (error) {
     state.credentials = null;
     alert(`${error.message}\n\nCheck the repository name, branch, and token permission.`);
   } finally {
     submit.disabled = false;
-    submit.innerHTML = "Connect securely <span>↗</span>";
+    submit.innerHTML = "Verify and enter <span>↗</span>";
   }
 });
 
@@ -314,8 +325,9 @@ async function restoreSession() {
   const saved = savedRepository();
   const token = sessionStorage.getItem("portfolio-github-token");
   if (!saved || !token) return;
-  state.credentials = { ...saved, token };
+  state.credentials = { ...saved, owner: ADMIN_GITHUB_LOGIN, token };
   try {
+    await verifyAdminIdentity(token);
     await loadRepositoryContent();
     setConnected(true); renderStoryList(); selectProject(state.content.projects[0]?.id || null);
   } catch { state.credentials = null; sessionStorage.removeItem("portfolio-github-token"); }

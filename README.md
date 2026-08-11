@@ -7,7 +7,7 @@ A fast, dependency-free portfolio with detailed project stories and a GitHub-bac
 - Responsive modern portfolio with verified profile content
 - LinkedIn integration and a prepared GitHub profile link
 - Project/blog case studies with challenge, approach, outcome, future direction, highlights, links, and screenshot galleries
-- `/admin.html` publishing studio for creating, editing, previewing, publishing, and removing stories
+- Owner-only `/admin.html` publishing studio for creating, editing, previewing, publishing, and removing stories
 - Atomic GitHub commits: a story and all its screens land in one commit
 - GitHub Actions validation and automatic GitHub Pages deployment
 - Optional Firebase Hosting configuration
@@ -45,7 +45,8 @@ Every future commit to `main`—whether made locally or through the Studio—sta
 2. Create a GitHub fine-grained personal access token:
    - Limit repository access to this portfolio repository.
    - Grant **Contents: Read and write** only.
-3. Enter the repository owner, repository name, `main` branch, and token.
+3. Enter the repository name, `main` branch, and token.
+   The Studio verifies that the token belongs to `@rapolusai`; all other GitHub identities are denied.
 4. Add or edit a story, attach screenshots, preview it, and choose **Publish**.
 5. The Studio creates one Git commit. GitHub Actions updates the website shortly afterward.
 

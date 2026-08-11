@@ -35,7 +35,7 @@ function render(project) {
       ${storySection("04", "Next", "Where it can go", project.future)}
       ${links.length ? `<section class="story-section reveal"><div class="story-section__label">05 / LINKS</div><div><h2>Explore further</h2><div class="story-links">${links.map(([label, url]) => `<a class="button button--ghost" href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${label} <span>↗</span></a>`).join("")}</div></div></section>` : ""}
     </div>
-    ${images.length > 1 ? `<div class="story-gallery">${images.slice(1).map((image) => `<figure class="reveal"><img src="${escapeHtml(absoluteAsset(image.path))}" alt="${escapeHtml(image.alt || `${project.title} interface screen`)}" loading="lazy"></figure>`).join("")}</div>` : ""}
+    ${images.length > 1 ? `<div class="story-gallery">${images.slice(1).map((image) => `<figure class="reveal"><img src="${escapeHtml(absoluteAsset(image.path))}" alt="${escapeHtml(image.alt || `${project.title} interface screen`)}" loading="lazy">${image.caption ? `<figcaption>${escapeHtml(image.caption)}</figcaption>` : ""}</figure>`).join("")}</div>` : ""}
     <aside class="story-next reveal"><p class="eyebrow">Have a similar challenge?</p><h2>Let’s turn complexity into a system your team can trust.</h2><a class="button button--light" href="mailto:rapolusai@gmail.com?subject=${encodeURIComponent(`Project discussion: ${project.title}`)}">Start a conversation <span>↗</span></a></aside>
   </article>`;
   const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")), { threshold: .08 });

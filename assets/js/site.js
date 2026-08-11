@@ -21,6 +21,27 @@ navigation?.addEventListener("click", (event) => {
   }
 });
 
+const heroVisual = document.querySelector(".hero-visual");
+const codeWindow = heroVisual?.querySelector(".code-window");
+const canUsePointerDepth = window.matchMedia("(prefers-reduced-motion: no-preference) and (pointer: fine)");
+
+if (heroVisual && codeWindow && canUsePointerDepth.matches) {
+  const restingTransform = "perspective(1000px) rotateX(2deg) rotateY(-4deg) translateZ(0)";
+  heroVisual.addEventListener("pointermove", (event) => {
+    const bounds = heroVisual.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - .5;
+    const y = (event.clientY - bounds.top) / bounds.height - .5;
+    codeWindow.style.transform = `perspective(1000px) rotateX(${2 - y * 7}deg) rotateY(${-4 + x * 9}deg) translateZ(12px)`;
+    heroVisual.style.setProperty("--pointer-x", `${50 + x * 30}%`);
+    heroVisual.style.setProperty("--pointer-y", `${50 + y * 30}%`);
+  });
+  heroVisual.addEventListener("pointerleave", () => {
+    codeWindow.style.transform = restingTransform;
+    heroVisual.style.removeProperty("--pointer-x");
+    heroVisual.style.removeProperty("--pointer-y");
+  });
+}
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
