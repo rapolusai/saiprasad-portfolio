@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-11T00:00:00.000Z",
+  "projects": [
+    {
+      "id": "architecture-platform",
+      "slug": "scalable-enterprise-platform",
+      "title": "Scalable Enterprise Platform",
+      "summary": "A reference story for resilient, high-availability business systems designed around clear service boundaries and reliable delivery.",
+      "category": "Enterprise architecture",
+      "status": "published",
+      "featured": true,
+      "year": "2026",
+      "role": "Senior engineer",
+      "timeline": "Iterative delivery",
+      "technologies": ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+      "challenge": "Enterprise products often accumulate tightly coupled workflows, slow release cycles, and operational blind spots. The challenge is to improve scale and delivery confidence without interrupting the business processes users already depend on.",
+      "solution": "Shape the platform around explicit domain boundaries, versioned APIs, measurable service-level goals, and an incremental migration path. Automate verification and deployment so each change is smaller, observable, and easier to reverse. Treat database design, failure handling, and production telemetry as first-class architecture concerns.",
+      "outcome": "A platform direction that supports independent evolution, clearer ownership, and more predictable releases. This sample case study demonstrates the level of technical explanation future project stories will contain; replace it in the Studio with your real implementation details and metrics.",
+      "future": "Extend the platform with event-driven integrations, workload-aware scaling, stronger developer self-service, and AI-assisted operational analysis where it produces measurable value.",
+      "highlights": ["Clear domain and service boundaries", "Automated build and release workflow", "Production signals designed with the feature"],
+      "images": [],
+      "liveUrl": "",
+      "repoUrl": ""
+    },
+    {
+      "id": "product-experience",
+      "slug": "modern-product-experience",
+      "title": "Modern Product Experience",
+      "summary": "A full-stack product approach connecting responsive interfaces to secure APIs, practical automation, and maintainable delivery.",
+      "category": "Product engineering",
+      "status": "published",
+      "featured": true,
+      "year": "2026",
+      "role": "Full-stack engineer",
+      "timeline": "Product lifecycle",
+      "technologies": ["React", "TypeScript", "Spring Boot", "AWS"],
+      "challenge": "Modern products must feel simple to users while coordinating complex business rules, integrations, permissions, and data flows behind the interface.",
+      "solution": "Begin with critical user journeys, establish a small reusable interface system, and design backend contracts around stable product capabilities. Keep accessibility, performance budgets, security, automated testing, and deployment inside the delivery process rather than treating them as finishing tasks.",
+      "outcome": "A cohesive product foundation that can move from early validation to production scale without discarding the engineering practices that keep it reliable.",
+      "future": "Add richer product analytics, targeted automation, and carefully scoped AI assistance while keeping user control and system transparency at the center.",
+      "highlights": ["Responsive and accessible interface foundation", "Secure, versioned API contracts", "End-to-end automated delivery"],
+      "images": [],
+      "liveUrl": "",
+      "repoUrl": ""
+    }
+  ]
+}

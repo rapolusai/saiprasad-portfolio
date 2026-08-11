@@ -1,0 +1,93 @@
+import { absoluteAsset, escapeHtml, fetchJson, initializeCommon, initials, projectHref, SITE_PATH, CONTENT_PATH } from "./shared.js";
+
+const header = document.querySelector("[data-header]");
+const menuButton = document.querySelector("[data-menu-button]");
+const navigation = document.querySelector("[data-nav]");
+const projectGrid = document.querySelector("[data-project-grid]");
+const emptyState = document.querySelector("[data-project-empty]");
+
+const setHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 30);
+setHeader();
+window.addEventListener("scroll", setHeader, { passive: true });
+
+menuButton?.addEventListener("click", () => {
+  const open = navigation.classList.toggle("is-open");
+  menuButton.setAttribute("aria-expanded", String(open));
+});
+navigation?.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    navigation.classList.remove("is-open");
+    menuButton?.setAttribute("aria-expanded", "false");
+  }
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: .12 });
+document.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+
+const expertiseViews = {
+  backend: { label: "BACKEND", nodes: [["CLIENTS"], ["API GATEWAY"], ["IDENTITY", "CORE API", "WORKERS"], ["SQL", "EVENTS", "CACHE"]], tags: ["Resilience", "Security", "Performance"] },
+  frontend: { label: "PRODUCT", nodes: [["USER NEED"], ["DESIGN SYSTEM"], ["REACT", "ANGULAR", "TYPESCRIPT"], ["ACCESSIBLE", "FAST", "RESPONSIVE"]], tags: ["Clarity", "UX", "Maintainability"] },
+  cloud: { label: "DELIVERY", nodes: [["GIT PUSH"], ["CI PIPELINE"], ["TEST", "BUILD", "SCAN"], ["DOCKER", "K8S", "AWS"]], tags: ["Automation", "Observability", "Reliability"] },
+  data: { label: "DATA", nodes: [["WORKLOAD"], ["DATA MODEL"], ["POSTGRES", "MYSQL", "MONGODB"], ["INDEX", "CACHE", "MEASURE"]], tags: ["Latency", "Throughput", "Integrity"] }
+};
+
+function renderExpertise(key) {
+  const view = expertiseViews[key];
+  const panel = document.querySelector("[data-expertise-panel]");
+  if (!view || !panel) return;
+  panel.innerHTML = `<p class="mono-label">CURRENT VIEW / ${view.label}</p><div class="system-map" aria-hidden="true">
+    <div class="map-node">${view.nodes[0][0]}</div><i></i><div class="map-node">${view.nodes[1][0]}</div><i></i>
+    <div class="map-services">${view.nodes[2].map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div><i></i>
+    <div class="map-databases">${view.nodes[3].map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div></div>
+    <div class="panel-tags">${view.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`;
+}
+document.querySelectorAll("[data-expertise]").forEach((item) => {
+  const activate = () => {
+    document.querySelectorAll("[data-expertise]").forEach((node) => node.classList.remove("is-active"));
+    item.classList.add("is-active");
+    renderExpertise(item.dataset.expertise);
+  };
+  item.addEventListener("mouseenter", activate);
+  item.addEventListener("focus", activate);
+  item.addEventListener("click", activate);
+});
+
+function renderProjects(projects) {
+  const published = projects.filter((project) => project.status === "published");
+  const featured = published.filter((project) => project.featured);
+  const items = (featured.length ? featured : published).slice(0, 6);
+  if (!items.length) {
+    projectGrid.innerHTML = "";
+    emptyState.hidden = false;
+    return;
+  }
+  projectGrid.innerHTML = items.map((project, index) => {
+    const image = project.images?.[0];
+    const tech = (project.technologies || []).slice(0, 3);
+    return `<a class="project-card reveal" href="${projectHref(project.slug)}">
+      <div class="project-card__image">
+        <span class="project-card__index">${String(index + 1).padStart(2, "0")}</span>
+        ${image ? `<img src="${escapeHtml(absoluteAsset(image.path))}" alt="${escapeHtml(image.alt || `${project.title} screen`)}" loading="lazy">` : `<div class="project-card__placeholder">${escapeHtml(initials(project.title))}</div>`}
+      </div>
+      <div class="project-card__body">
+        <div class="project-card__meta"><span>${escapeHtml(project.category || "Project")}</span><span>${escapeHtml(project.year || "")}</span></div>
+        <h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.summary)}</p>
+        <div class="project-card__footer"><div class="tag-list">${tech.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div><span class="project-arrow">↗</span></div>
+      </div></a>`;
+  }).join("");
+  projectGrid.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+}
+
+async function start() {
+  const [siteResult, projectsResult] = await Promise.allSettled([fetchJson(SITE_PATH), fetchJson(CONTENT_PATH)]);
+  initializeCommon(siteResult.status === "fulfilled" ? siteResult.value : {});
+  renderProjects(projectsResult.status === "fulfilled" ? projectsResult.value.projects || [] : []);
+}
+start();

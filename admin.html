@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1211">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.github.com; base-uri 'self'; form-action 'self'">
+  <title>Project Studio — Saiprasad Rapolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <a class="brand" href="index.html"><span class="brand-mark">SR</span><span class="brand-copy"><strong>Project Studio</strong><small>Git-backed publishing</small></span></a>
+    <div class="admin-header__actions"><span class="connection-state" data-connection-state><i></i> Not connected</span><a href="index.html" target="_blank">View site ↗</a></div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="admin-intro">
+      <div><p class="eyebrow">Private publishing workspace</p><h1>Turn shipped work into <em>clear stories.</em></h1></div>
+      <p>This studio commits updates and screenshots directly to your GitHub repository. Your deployment workflow publishes them automatically.</p>
+    </section>
+
+    <section class="admin-connect" data-connect-panel>
+      <div class="admin-connect__copy"><span class="step-number">01</span><div><h2>Connect the repository</h2><p>Your access token stays in this browser tab only and is never added to the website or repository.</p></div></div>
+      <form class="connect-form" data-connect-form>
+        <label>GitHub owner<input name="owner" autocomplete="username" placeholder="your-github-username" required></label>
+        <label>Repository<input name="repo" placeholder="portfolio" required></label>
+        <label>Branch<input name="branch" value="main" required></label>
+        <label class="token-field">Fine-grained access token<input name="token" type="password" autocomplete="off" placeholder="github_pat_…" required><small>Required permission: Contents → Read and write</small></label>
+        <button class="button button--primary" type="submit">Connect securely <span>↗</span></button>
+      </form>
+      <details class="token-help"><summary>How do I create the right token?</summary><ol><li>Open GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.</li><li>Select only this portfolio repository.</li><li>Grant <strong>Contents: Read and write</strong>, then generate the token.</li><li>Paste it above. It is held only for this tab.</li></ol></details>
+    </section>
+
+    <section class="studio" data-studio hidden>
+      <aside class="studio-sidebar">
+        <div class="studio-sidebar__heading"><div><p class="eyebrow">Stories</p><h2>Projects</h2></div><button class="icon-button" type="button" data-new-project aria-label="Create a new project">+</button></div>
+        <div class="story-list" data-story-list></div>
+        <button class="text-button" type="button" data-disconnect>Disconnect repository</button>
+      </aside>
+
+      <section class="editor-panel">
+        <form class="project-editor" data-project-form>
+          <div class="editor-toolbar"><div><p class="eyebrow" data-editor-kicker>New story</p><h2 data-editor-title>Untitled project</h2></div><div><button class="button button--ghost button--small" type="button" data-delete hidden>Delete</button><button class="button button--ghost button--small" type="button" data-preview>Preview</button><button class="button button--primary button--small" type="submit">Publish changes <span>↗</span></button></div></div>
+          <div class="form-status" data-form-status hidden></div>
+          <input name="id" type="hidden">
+
+          <fieldset><legend>Essentials</legend><div class="form-grid">
+            <label class="span-2">Project title<input name="title" placeholder="A clear, memorable project name" required></label>
+            <label>Slug<input name="slug" placeholder="project-url-slug" pattern="[a-z0-9-]+" required></label>
+            <label>Category<input name="category" placeholder="Enterprise platform"></label>
+            <label class="span-2">One-line summary<textarea name="summary" rows="2" placeholder="What the product does and why it matters" required></textarea></label>
+            <label>Status<select name="status"><option value="published">Published</option><option value="draft">Draft</option></select></label>
+            <label>Year<input name="year" inputmode="numeric" placeholder="2026"></label>
+            <label>My role<input name="role" placeholder="Lead engineer"></label>
+            <label>Timeline<input name="timeline" placeholder="6 months"></label>
+            <label class="span-2">Technologies<input name="technologies" placeholder="Java, Spring Boot, React, PostgreSQL"></label>
+            <label class="checkbox-label"><input name="featured" type="checkbox"> Feature on homepage</label>
+          </div></fieldset>
+
+          <fieldset><legend>Case study</legend><div class="form-grid">
+            <label class="span-2">The challenge<textarea name="challenge" rows="5" placeholder="What was difficult? What constraints shaped the work?" required></textarea></label>
+            <label class="span-2">The approach<textarea name="solution" rows="6" placeholder="Explain the architecture, decisions, and execution." required></textarea></label>
+            <label class="span-2">Outcome<textarea name="outcome" rows="4" placeholder="What changed for users, the business, or the engineering team?" required></textarea></label>
+            <label class="span-2">Future direction<textarea name="future" rows="4" placeholder="What would you improve, extend, or explore next?"></textarea></label>
+            <label class="span-2">Highlights <small>One per line</small><textarea name="highlights" rows="4" placeholder="Reduced response times\nAutomated release process\nImproved operational visibility"></textarea></label>
+          </div></fieldset>
+
+          <fieldset><legend>Screens & links</legend><div class="form-grid">
+            <label class="span-2 upload-zone" data-upload-zone><input name="screenshots" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple><span><strong>Drop project screens here</strong><small>PNG, JPG, WebP or GIF · up to 5 MB each</small></span></label>
+            <div class="span-2 image-queue" data-image-queue></div>
+            <label>Live product URL<input name="liveUrl" type="url" placeholder="https://…"></label>
+            <label>Repository URL<input name="repoUrl" type="url" placeholder="https://github.com/…"></label>
+          </div></fieldset>
+
+          <div class="editor-footer"><p>Publishing creates one Git commit. GitHub Actions will update the live site automatically.</p><button class="button button--primary" type="submit">Publish project <span>↗</span></button></div>
+        </form>
+      </section>
+    </section>
+  </main>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script type="module" src="assets/js/admin.js"></script>
+</body>
+</html>
