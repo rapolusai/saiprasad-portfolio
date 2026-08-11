@@ -27,7 +27,7 @@ jobs:
       - name: Assemble static site
         run: |
           mkdir _site
-          cp index.html project.html admin.html 404.html manifest.webmanifest robots.txt _site/
+          cp index.html project.html contact.html admin.html 404.html manifest.webmanifest robots.txt _site/
           cp -r assets content _site/
           touch _site/.nojekyll
 
