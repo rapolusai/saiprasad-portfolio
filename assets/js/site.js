@@ -6,7 +6,11 @@ const navigation = document.querySelector("[data-nav]");
 const projectGrid = document.querySelector("[data-project-grid]");
 const emptyState = document.querySelector("[data-project-empty]");
 
-const setHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 30);
+const setHeader = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 30);
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  document.documentElement.style.setProperty("--scroll-progress", `${scrollable > 0 ? Math.min(100, window.scrollY / scrollable * 100) : 0}%`);
+};
 setHeader();
 window.addEventListener("scroll", setHeader, { passive: true });
 
@@ -105,6 +109,23 @@ function renderProjects(projects) {
       </div></a>`;
   }).join("");
   projectGrid.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+  if (canUsePointerDepth.matches) {
+    projectGrid.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - .5;
+        const y = (event.clientY - bounds.top) / bounds.height - .5;
+        card.style.setProperty("--card-x", `${50 + x * 70}%`);
+        card.style.setProperty("--card-y", `${50 + y * 70}%`);
+        card.style.transform = `perspective(1100px) rotateX(${-y * 4}deg) rotateY(${x * 5}deg) translateY(-6px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.removeProperty("--card-x");
+        card.style.removeProperty("--card-y");
+        card.style.removeProperty("transform");
+      });
+    });
+  }
 }
 
 async function start() {
