@@ -92,9 +92,10 @@ function renderProjects(projects) {
   projectGrid.innerHTML = items.map((project, index) => {
     const image = project.images?.[0];
     const tech = (project.technologies || []).slice(0, 3);
-    return `<a class="project-card reveal" href="${projectHref(project.slug)}">
+    return `<a class="project-card ${image ? "has-image" : "has-placeholder"} reveal" href="${projectHref(project.slug)}">
       <div class="project-card__image">
         <span class="project-card__index">${String(index + 1).padStart(2, "0")}</span>
+        <span class="project-card__type">Case study</span>
         ${image ? `<img src="${escapeHtml(absoluteAsset(image.path))}" alt="${escapeHtml(image.alt || `${project.title} screen`)}" loading="lazy">` : `<div class="project-card__placeholder">${escapeHtml(initials(project.title))}</div>`}
       </div>
       <div class="project-card__body">

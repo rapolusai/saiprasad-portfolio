@@ -47,6 +47,34 @@
       "repoUrl": ""
     },
     {
+      "id": "swimmer-club-management",
+      "slug": "swimmer-club-management",
+      "title": "Swimmer Club Management",
+      "summary": "A desktop operations platform for swimming training centers, bringing members, attendance, trainers, fees, inventory, expenses, reports, and communication into one workspace.",
+      "category": "Club operations platform",
+      "status": "published",
+      "featured": true,
+      "year": "2026",
+      "role": "Product architect & engineer",
+      "timeline": "Active development",
+      "technologies": ["Java 17", "JavaFX 21", "Spring Boot 3", "MySQL", "JPA", "Liquibase", "Twilio", "ZXing"],
+      "challenge": "Swimming training centers coordinate recurring memberships, daily attendance, trainer assignments, payments, operational expenses, inventory, and member communication. When those workflows are split between paper registers and disconnected spreadsheets, staff lose time, financial visibility becomes inconsistent, and member history is difficult to follow. The product needed to consolidate day-to-day club operations without making front-desk work slower or more complicated.",
+      "solution": "I built Swimmer as a JavaFX desktop application backed by Spring Boot, Spring Data JPA, MySQL, and Liquibase. The interface is organized around focused controllers for the dashboard, member registration and profiles, live and historical attendance, professional and general trainers, inventory, expenses, sales, reports, gallery, administration, and help. QR-code capabilities use ZXing to support member identification and attendance workflows, while a companion Android scanner extends check-in beyond the desktop. Twilio supports SMS communication, and iText provides PDF generation for printable operational documents and reports.",
+      "outcome": "Swimmer creates a single operational workspace for the club. Staff can register and search members, maintain profiles and ID cards, follow attendance history, manage trainers, record expenses and inventory, and review activity from a dashboard rather than reconciling separate records. The layered controller, service, repository, and model structure keeps interface workflows separate from persistence and business logic, creating a practical foundation for continued product development.",
+      "future": "The next direction is to make the platform easier to operate across multiple training-center locations. A hosted synchronization layer, role-based access, online registration and payments, richer revenue and retention analytics, automated renewal reminders, and mobile-first trainer workflows could extend the current desktop foundation while retaining reliable offline-friendly front-desk operations.",
+      "highlights": [
+        "Dashboard for membership, revenue, alerts, and daily activity",
+        "Member registration, profiles, search, editing, and printable ID cards",
+        "Live and historical attendance with QR-code and Android scanner support",
+        "Professional and general trainer management",
+        "Inventory, sales, and operational expense tracking",
+        "PDF reporting and SMS communication workflows"
+      ],
+      "images": [],
+      "liveUrl": "",
+      "repoUrl": ""
+    },
+    {
       "id": "architecture-platform",
       "slug": "scalable-enterprise-platform",
       "title": "Scalable Enterprise Platform",
