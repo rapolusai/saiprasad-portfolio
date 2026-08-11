@@ -22,12 +22,12 @@ Edit `content/site.json`:
   "resumeUrl": "assets/resume.pdf",
   "social": {
     "linkedin": "https://in.linkedin.com/in/rapolusai",
-    "github": "https://github.com/YOUR-USERNAME"
+    "github": "https://github.com/rapolusai"
   }
 }
 ```
 
-The GitHub links remain hidden until a URL is supplied. Put a resume at `assets/resume.pdf` if you want the resume link enabled.
+Put a resume at `assets/resume.pdf` if you want the resume link enabled.
 
 ## Deploy free with GitHub Pages (recommended)
 
