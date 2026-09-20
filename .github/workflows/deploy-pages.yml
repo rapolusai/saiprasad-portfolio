@@ -29,6 +29,7 @@ jobs:
           mkdir _site
           cp index.html project.html contact.html admin.html 404.html manifest.webmanifest robots.txt _site/
           cp -r assets content _site/
+          cp -r parkingpilotai _site/
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages
