@@ -1,10 +1,12 @@
-import { absoluteAsset, escapeHtml, fetchJson, initializeCommon, initials, projectHref, SITE_PATH, CONTENT_PATH } from "./shared.js";
+import { absoluteAsset, escapeHtml, fetchJson, initializeCommon, initials, projectHref, safeUrl, SITE_PATH, CONTENT_PATH, PRODUCTS_PATH } from "./shared.js";
 
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const navigation = document.querySelector("[data-nav]");
 const projectGrid = document.querySelector("[data-project-grid]");
 const emptyState = document.querySelector("[data-project-empty]");
+const productGrid = document.querySelector("[data-product-grid]");
+const productEmptyState = document.querySelector("[data-product-empty]");
 
 const setHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 30);
@@ -128,9 +130,32 @@ function renderProjects(projects) {
   }
 }
 
+function renderProducts(products) {
+  if (!productGrid) return;
+  const published = products.filter((product) => product.status?.toLowerCase() === "live");
+  if (!published.length) {
+    productGrid.innerHTML = "";
+    if (productEmptyState) productEmptyState.hidden = false;
+    return;
+  }
+  productGrid.innerHTML = published.map((product, index) => {
+    const href = safeUrl(product.href || "#") || "#";
+    const features = (product.features || []).slice(0, 4);
+    return `<a class="product-showcase__card reveal" href="${escapeHtml(href)}">
+      <div class="product-showcase__visual" aria-hidden="true"><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(initials(product.name))}</strong><i></i></div>
+      <div class="product-showcase__body">
+        <div class="product-showcase__meta"><span>${escapeHtml(product.category || "Product")}</span><b>${escapeHtml(product.status)}</b></div>
+        <h3>${escapeHtml(product.name)}</h3><p>${escapeHtml(product.summary)}</p>
+        <div class="product-showcase__footer"><div class="tag-list">${features.map((feature) => `<span>${escapeHtml(feature)}</span>`).join("")}</div><strong>Explore product ↗</strong></div>
+      </div></a>`;
+  }).join("");
+  productGrid.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
+}
+
 async function start() {
-  const [siteResult, projectsResult] = await Promise.allSettled([fetchJson(SITE_PATH), fetchJson(CONTENT_PATH)]);
+  const [siteResult, projectsResult, productsResult] = await Promise.allSettled([fetchJson(SITE_PATH), fetchJson(CONTENT_PATH), fetchJson(PRODUCTS_PATH)]);
   initializeCommon(siteResult.status === "fulfilled" ? siteResult.value : {});
   renderProjects(projectsResult.status === "fulfilled" ? projectsResult.value.projects || [] : []);
+  renderProducts(productsResult.status === "fulfilled" ? productsResult.value.products || [] : []);
 }
 start();

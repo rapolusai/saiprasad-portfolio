@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=portfolio-products-20260920">
   <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
@@ -29,6 +29,7 @@
       <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
     </button>
     <nav class="site-nav" id="site-nav" data-nav aria-label="Primary navigation">
+      <a href="#products">Products</a>
       <a href="#work">Work</a>
       <a href="#expertise">Expertise</a>
       <a href="#about">About</a>
@@ -94,6 +95,17 @@
       <div><strong>10+</strong><span>Enterprise projects</span></div>
       <div><strong>Full stack</strong><span>Architecture to interface</span></div>
       <div><strong>Hyderabad</strong><span>Working with teams globally</span></div>
+    </section>
+
+    <section class="section product-showcase" id="products">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">Products</p><h2>Useful systems,<br>built as products.</h2></div>
+        <p>Independent products designed around real operational needs. New products can be added here as they become ready.</p>
+      </div>
+      <div class="product-showcase__grid" data-product-grid>
+        <article class="product-showcase__loading"><p>Loading products…</p></article>
+      </div>
+      <div class="empty-state" data-product-empty hidden><p>New products are being prepared.</p></div>
     </section>
 
     <section class="section work" id="work">

@@ -1,12 +1,20 @@
 import { access, readFile } from "node:fs/promises";
 
-const required = ["index.html", "project.html", "contact.html", "admin.html", "parkingpilotai/index.html", "parkingpilotai/privacy.html", "parkingpilotai/terms.html", "parkingpilotai/refund.html", "parkingpilotai/contact.html", "assets/css/styles.css", "assets/js/site.js", "assets/js/project.js", "assets/js/contact.js", "assets/js/admin.js", "assets/js/parkingpilotai.js", "content/site.json", "content/projects.json"];
+const required = ["index.html", "project.html", "contact.html", "admin.html", "parkingpilotai/index.html", "parkingpilotai/privacy.html", "parkingpilotai/terms.html", "parkingpilotai/refund.html", "parkingpilotai/contact.html", "assets/css/styles.css", "assets/js/site.js", "assets/js/project.js", "assets/js/contact.js", "assets/js/admin.js", "assets/js/parkingpilotai.js", "content/site.json", "content/projects.json", "content/products.json"];
 await Promise.all(required.map((path) => access(path)));
 
 const site = JSON.parse(await readFile("content/site.json", "utf8"));
 const content = JSON.parse(await readFile("content/projects.json", "utf8"));
+const productsContent = JSON.parse(await readFile("content/products.json", "utf8"));
 if (!site.name || !site.email) throw new Error("content/site.json needs a name and email.");
 if (!Array.isArray(content.projects)) throw new Error("content/projects.json must contain a projects array.");
+if (!Array.isArray(productsContent.products)) throw new Error("content/products.json must contain a products array.");
+
+for (const product of productsContent.products) {
+  for (const field of ["id", "name", "status", "summary", "href"]) {
+    if (!product[field]) throw new Error(`Product is missing ${field}.`);
+  }
+}
 
 const ids = new Set();
 const slugs = new Set();
@@ -24,4 +32,4 @@ for (const project of content.projects) {
   }
 }
 
-console.log(`Validated ${content.projects.length} project stories and ${required.length} required files.`);
+console.log(`Validated ${content.projects.length} project stories, ${productsContent.products.length} products, and ${required.length} required files.`);

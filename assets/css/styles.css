@@ -132,6 +132,24 @@ em { color: var(--accent-soft); font-style: normal; }
 .proof-strip strong { color: var(--text); font-size: 1.55rem; letter-spacing: -.055em; }
 .proof-strip span { margin-top: .25rem; color: var(--muted); font: .6rem "DM Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
 
+.product-showcase { width: min(100% - 2.5rem,1360px); }
+.product-showcase__grid { display: grid; gap: 1rem; }
+.product-showcase__card { display: grid; grid-template-columns: minmax(260px,.72fr) 1.28fr; min-height: 390px; overflow: hidden; border: 1px solid var(--line); border-radius: 1.65rem; background: linear-gradient(145deg,rgba(18,30,25,.96),rgba(13,17,24,.98)); box-shadow: 0 24px 80px rgba(0,0,0,.22); transition: transform .25s,border-color .25s,box-shadow .25s; }
+.product-showcase__card:hover { transform: translateY(-5px); border-color: rgba(84,214,160,.38); box-shadow: 0 34px 95px rgba(0,0,0,.3); }
+.product-showcase__visual { position: relative; min-height: 340px; display: grid; place-items: center; isolation: isolate; overflow: hidden; border-right: 1px solid rgba(84,214,160,.13); background: radial-gradient(circle at 68% 22%,rgba(84,214,160,.23),transparent 32%),linear-gradient(145deg,#10271d,#09130e); }
+.product-showcase__visual::before { content: ""; position: absolute; z-index: -1; width: min(25vw,18rem); aspect-ratio: 1; border: 1px solid rgba(84,214,160,.25); border-radius: 36% 64% 58% 42% / 45% 38% 62% 55%; box-shadow: inset 0 0 75px rgba(84,214,160,.08),0 0 0 45px rgba(84,214,160,.025),0 0 0 90px rgba(84,214,160,.015); transform: rotate(14deg); }
+.product-showcase__visual > span { position: absolute; top: 1.2rem; left: 1.2rem; color: #85a696; font: .6rem "DM Mono",monospace; }
+.product-showcase__visual strong { color: #aaf0cf; font: 600 clamp(3rem,7vw,6rem) "DM Mono",monospace; letter-spacing: -.1em; }
+.product-showcase__visual i { position: absolute; right: 1.2rem; bottom: 1.2rem; width: .7rem; height: .7rem; border-radius: 50%; background: #54d6a0; box-shadow: 0 0 0 7px rgba(84,214,160,.08),0 0 24px #54d6a0; }
+.product-showcase__body { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.6rem,4vw,4rem); }
+.product-showcase__meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.8rem; color: var(--muted); font: .6rem "DM Mono",monospace; text-transform: uppercase; letter-spacing: .08em; }
+.product-showcase__meta b { padding: .35rem .65rem; color: #7ce5b6; border: 1px solid rgba(84,214,160,.22); border-radius: 999px; background: rgba(84,214,160,.06); }
+.product-showcase__body h3 { margin-bottom: .8rem; font-size: clamp(2.2rem,5vw,4.8rem); }
+.product-showcase__body > p { max-width: 720px; color: #aebbb4; font-size: clamp(.92rem,1.4vw,1.1rem); }
+.product-showcase__footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
+.product-showcase__footer > strong { flex: 0 0 auto; color: #71ddb0; font-size: .75rem; }
+.product-showcase__loading { padding: 4rem; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 1rem; }
+
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; margin-bottom: clamp(2.5rem, 6vw, 5rem); }
 .section-heading > p { max-width: 430px; margin: 0; color: var(--muted); font-size: .95rem; }
 .work { width: min(100% - 2.5rem, 1360px); }
@@ -395,6 +413,10 @@ input:focus, textarea:focus, select:focus { border-color: rgba(112,140,255,.5); 
   .proof-strip { grid-template-columns: 1fr 1fr; }
   .proof-strip > div:nth-child(2) { border-right: 0; }
   .proof-strip > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .product-showcase__card { grid-template-columns: 1fr; }
+  .product-showcase__visual { min-height: 250px; border-right: 0; border-bottom: 1px solid rgba(84,214,160,.13); }
+  .product-showcase__visual::before { width: 12rem; }
+  .product-showcase__footer { align-items: flex-start; flex-direction: column; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 1.2rem; }
   .project-card, .project-card:nth-child(n) { grid-column: span 12; min-height: 480px; }
   .project-card__image { min-height: 280px; }

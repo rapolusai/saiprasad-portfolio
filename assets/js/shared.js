@@ -1,5 +1,6 @@
 export const CONTENT_PATH = "content/projects.json";
 export const SITE_PATH = "content/site.json";
+export const PRODUCTS_PATH = "content/products.json";
 
 export const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")

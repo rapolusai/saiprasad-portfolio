@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": "parkingpilotai",
+      "name": "ParkingPilotAI",
+      "status": "Live",
+      "category": "Parking operations platform",
+      "summary": "Mobile-first vehicle entry, exit, acknowledgements, collections, teams, and reporting for theatre and non-theatre parking locations.",
+      "features": ["Android first", "Role-based operations", "Flexible receipts", "Usage and collections"],
+      "href": "/parkingpilotai"
+    }
+  ]
+}
