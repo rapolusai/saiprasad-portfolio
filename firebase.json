@@ -11,6 +11,13 @@
     ],
     "cleanUrls": true,
     "trailingSlash": false,
+    "rewrites": [
+      { "source": "/parkingpilotai", "destination": "/parkingpilotai/index.html" },
+      { "source": "/parkingpilotai/privacy", "destination": "/parkingpilotai/privacy.html" },
+      { "source": "/parkingpilotai/terms", "destination": "/parkingpilotai/terms.html" },
+      { "source": "/parkingpilotai/refund", "destination": "/parkingpilotai/refund.html" },
+      { "source": "/parkingpilotai/contact", "destination": "/parkingpilotai/contact.html" }
+    ],
     "headers": [
       {
         "source": "**/*.@(js|css)",
