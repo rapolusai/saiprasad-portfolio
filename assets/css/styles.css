@@ -42,7 +42,10 @@ img { display: block; max-width: 100%; }
 .site-header { position: fixed; top: 0; left: 0; z-index: 30; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem clamp(1.25rem, 4vw, 4.5rem); border-bottom: 1px solid transparent; transition: background .25s, border-color .25s, padding .25s, box-shadow .25s; }
 .site-header.is-scrolled, .site-header.is-solid { padding-top: .75rem; padding-bottom: .75rem; background: rgba(10, 12, 18, .82); border-color: var(--line); box-shadow: 0 12px 45px rgba(0,0,0,.18); backdrop-filter: blur(24px) saturate(140%); }
 .brand { display: inline-flex; align-items: center; gap: .8rem; }
-.brand-mark { display: grid; place-items: center; width: 2.65rem; height: 2.65rem; color: #fff; border: 1px solid rgba(255,255,255,.16); background: linear-gradient(145deg,#8098ff,#536be2); border-radius: .85rem; box-shadow: 0 10px 28px rgba(68,88,190,.28); font-size: .8rem; font-weight: 800; letter-spacing: -.02em; transform: rotate(-4deg); }
+.brand-mark { position: relative; display: grid; place-items: center; width: 2.65rem; height: 2.65rem; color: #fff; overflow: hidden; border: 1px solid rgba(255,255,255,.16); background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.34), transparent 30%), linear-gradient(145deg,#8098ff,#536be2); border-radius: .85rem; box-shadow: 0 10px 28px rgba(68,88,190,.28); transform: rotate(-4deg); }
+.brand-mark::before { content: ""; position: absolute; inset: .42rem; border: 1px solid rgba(255,255,255,.42); border-right-color: transparent; border-bottom-color: rgba(255,255,255,.16); border-radius: 50%; }
+.brand-mark span { position: relative; z-index: 1; font: 800 1.25rem/1 "Space Grotesk", "Inter", system-ui, sans-serif; letter-spacing: 0; transform: translate(-.08rem,-.02rem); }
+.brand-mark i { position: absolute; z-index: 1; width: .32rem; height: 1.65rem; right: .72rem; bottom: .36rem; border-radius: 999px; background: linear-gradient(180deg,#fff,rgba(255,255,255,.52)); transform: rotate(37deg); box-shadow: 0 0 18px rgba(255,255,255,.36); }
 .brand-copy { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-copy strong { font-size: .88rem; letter-spacing: -.02em; }
 .brand-copy small { margin-top: .15rem; color: var(--muted); font: 400 .62rem/1.2 "DM Mono", monospace; text-transform: uppercase; letter-spacing: .1em; }
@@ -220,7 +223,7 @@ em { color: var(--accent-soft); font-style: normal; }
 .contact { width: min(100% - 2.5rem, 1360px); padding-bottom: 3rem; }
 .contact-card { position: relative; isolation: isolate; overflow: hidden; padding: clamp(2rem, 7vw, 6.5rem); color: var(--ink); border-radius: 2rem; background: linear-gradient(135deg,#a9b8ff 0%,#8299ff 52%,#8d7de8 100%); box-shadow: 0 35px 120px rgba(76,94,190,.24); }
 .contact-card::after { content: ""; position: absolute; z-index: -1; width: 34rem; height: 34rem; right: -9rem; top: -17rem; border: 1px solid rgba(9,11,18,.13); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.04), 0 0 0 140px rgba(255,255,255,.025); }
-.contact-card::before { content: "SR"; position: absolute; right: clamp(1rem,5vw,5rem); bottom: -2.2rem; z-index: -1; color: rgba(18,25,59,.07); font-size: clamp(8rem,24vw,20rem); font-weight: 800; line-height: .8; letter-spacing: -.1em; transform: perspective(800px) rotateY(-12deg); }
+.contact-card::before { content: "R"; position: absolute; right: clamp(1rem,5vw,5rem); bottom: -2.2rem; z-index: -1; color: rgba(18,25,59,.07); font-size: clamp(8rem,24vw,20rem); font-weight: 800; line-height: .8; letter-spacing: 0; transform: perspective(800px) rotateY(-12deg); }
 .contact-card .eyebrow { color: #252e5e; }
 .contact-card h2 { max-width: 900px; margin-bottom: 1.4rem; }
 .contact-card h2 em { color: #25336f; }
