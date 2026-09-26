@@ -151,7 +151,7 @@ storyList.addEventListener("click", (event) => {
 function value(name, next = "") { projectForm.elements[name].value = next ?? ""; }
 
 function blankProject() {
-  return { id: "", title: "", slug: "", summary: "", category: "", status: "published", featured: true, year: String(new Date().getFullYear()), role: "", timeline: "", technologies: [], challenge: "", solution: "", outcome: "", future: "", highlights: [], images: [], liveUrl: "", repoUrl: "" };
+  return { id: "", title: "", slug: "", summary: "", category: "", status: "published", featured: true, year: String(new Date().getFullYear()), role: "", timeline: "", technologies: [], challenge: "", solution: "", outcome: "", future: "", highlights: [], images: [], liveUrl: "" };
 }
 
 function selectProject(id) {
@@ -159,7 +159,7 @@ function selectProject(id) {
   state.selectedId = project.id || null;
   state.images = structuredClone(project.images || []);
   state.pendingFiles = [];
-  value("id", project.id); value("title", project.title); value("slug", project.slug); value("summary", project.summary); value("category", project.category); value("status", project.status); value("year", project.year); value("role", project.role); value("timeline", project.timeline); value("technologies", (project.technologies || []).join(", ")); value("challenge", project.challenge); value("solution", project.solution); value("outcome", project.outcome); value("future", project.future); value("highlights", (project.highlights || []).join("\n")); value("liveUrl", project.liveUrl); value("repoUrl", project.repoUrl);
+  value("id", project.id); value("title", project.title); value("slug", project.slug); value("summary", project.summary); value("category", project.category); value("status", project.status); value("year", project.year); value("role", project.role); value("timeline", project.timeline); value("technologies", (project.technologies || []).join(", ")); value("challenge", project.challenge); value("solution", project.solution); value("outcome", project.outcome); value("future", project.future); value("highlights", (project.highlights || []).join("\n")); value("liveUrl", project.liveUrl);
   projectForm.elements.featured.checked = Boolean(project.featured);
   editorKicker.textContent = project.id ? "Editing story" : "New story";
   editorTitle.textContent = project.title || "Untitled project";
@@ -200,8 +200,7 @@ function collectProject() {
     future: data.get("future").trim(),
     highlights: data.get("highlights").split("\n").map((item) => item.trim()).filter(Boolean),
     images: structuredClone(state.images),
-    liveUrl: data.get("liveUrl").trim(),
-    repoUrl: data.get("repoUrl").trim()
+    liveUrl: data.get("liveUrl").trim()
   };
 }
 

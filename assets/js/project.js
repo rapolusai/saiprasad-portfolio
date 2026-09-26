@@ -21,7 +21,7 @@ function render(project) {
   const images = project.images || [];
   const cover = images[0];
   const highlights = (project.highlights || []).filter(Boolean);
-  const links = [["View live product", safeUrl(project.liveUrl)], ["View repository", safeUrl(project.repoUrl)]].filter(([, url]) => url);
+  const links = [["View live product", safeUrl(project.liveUrl)]].filter(([, url]) => url);
   document.title = `${project.title} — Rapolu\`s`;
   root.innerHTML = `<article>
     <header class="story-hero reveal"><div class="story-hero__meta"><span>${escapeHtml(project.category || "Case study")}</span><span>${escapeHtml(project.status === "draft" ? "Preview" : "Published")}</span></div>

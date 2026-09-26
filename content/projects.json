@@ -43,8 +43,7 @@
           "caption": "Operational workflows: report generation, PDF preview, notifications, and application settings."
         }
       ],
-      "liveUrl": "",
-      "repoUrl": ""
+      "liveUrl": ""
     },
     {
       "id": "swimmer-club-management",
@@ -87,8 +86,7 @@
           "caption": "Configurable operations: fee structures, member and professional time slots, attendance rules, database backup and restore, and messaging."
         }
       ],
-      "liveUrl": "",
-      "repoUrl": ""
+      "liveUrl": ""
     },
     {
       "id": "architecture-platform",
@@ -108,8 +106,7 @@
       "future": "Extend the platform with event-driven integrations, workload-aware scaling, stronger developer self-service, and AI-assisted operational analysis where it produces measurable value.",
       "highlights": ["Clear domain and service boundaries", "Automated build and release workflow", "Production signals designed with the feature"],
       "images": [],
-      "liveUrl": "",
-      "repoUrl": ""
+      "liveUrl": ""
     },
     {
       "id": "product-experience",
@@ -129,8 +126,7 @@
       "future": "Add richer product analytics, targeted automation, and carefully scoped AI assistance while keeping user control and system transparency at the center.",
       "highlights": ["Responsive and accessible interface foundation", "Secure, versioned API contracts", "End-to-end automated delivery"],
       "images": [],
-      "liveUrl": "",
-      "repoUrl": ""
+      "liveUrl": ""
     }
   ]
 }
