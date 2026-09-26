@@ -18,9 +18,9 @@ form?.addEventListener("submit", (event) => {
   const topic = String(data.get("topic") || "Project enquiry").trim();
   const message = String(data.get("message") || "").trim();
   const subject = `${topic} — ${name}`;
-  const body = [`Hello Saiprasad,`, "", message, "", `From: ${name}`, `Reply to: ${email}`].join("\n");
+  const body = [`Hello Rapolu\`s,`, "", message, "", `From: ${name}`, `Reply to: ${email}`].join("\n");
   status.textContent = "Opening your email application…";
-  window.location.href = `mailto:rapolusai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:rajinirapolus@gamil.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
 fetchJson(SITE_PATH).then(initializeCommon).catch(() => initializeCommon({}));
