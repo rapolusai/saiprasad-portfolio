@@ -8,6 +8,15 @@
       "summary": "Mobile-first vehicle entry, exit, acknowledgements, collections, teams, and reporting for theatre and non-theatre parking locations.",
       "features": ["Android first", "Role-based operations", "Flexible receipts", "Usage and collections"],
       "href": "/parkingpilotai"
+    },
+    {
+      "id": "apartmentcare",
+      "name": "ApartmentCare",
+      "status": "In development",
+      "category": "Apartment community management",
+      "summary": "A mobile-first apartment operations app for resident onboarding, maintenance requests, community notices, bookings, and transparent building administration.",
+      "features": ["Android first", "Resident and admin workflows", "Maintenance tracking", "Community operations"],
+      "href": "/apartmentcare"
     }
   ]
 }

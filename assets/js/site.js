@@ -132,7 +132,7 @@ function renderProjects(projects) {
 
 function renderProducts(products) {
   if (!productGrid) return;
-  const published = products.filter((product) => product.status?.toLowerCase() === "live");
+  const published = products.filter((product) => ["live", "in development"].includes(product.status?.toLowerCase()));
   if (!published.length) {
     productGrid.innerHTML = "";
     if (productEmptyState) productEmptyState.hidden = false;
