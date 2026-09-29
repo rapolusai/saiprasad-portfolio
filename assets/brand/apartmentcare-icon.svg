@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-labelledby="title">
+  <title id="title">ApartmentCare</title>
+  <rect width="108" height="108" rx="14" fill="#0b1220"/>
+  <g transform="translate(15 12) scale(.72)">
+    <path fill="#f1b75d" d="M14 50 29 35 45 50 42 50 42 82 17 82 17 50Z"/>
+    <path fill="#ffdc9b" d="M12 50 29 32 47 50 43 50 29 38 16 50Z"/>
+    <path fill="#ffdc9b" d="M39 39 54 24 70 39 68 39 68 82 39 82Z"/>
+    <path fill="#f1b75d" d="M66 50 81 36 96 50 93 50 93 82 66 82Z"/>
+    <path fill="#ffdc9b" d="M64 50 81 33 98 50 94 50 81 39 68 50Z"/>
+    <path fill="#0b1220" d="M23 56h6v7h-6z M34 56h6v7h-6z M23 68h6v7h-6z M34 68h6v7h-6z"/>
+    <path fill="#0b1220" d="M46 47h6v7h-6z M57 47h6v7h-6z M46 59h6v7h-6z M57 59h6v7h-6z M46 71h6v7h-6z M57 71h6v7h-6z"/>
+    <path fill="#0b1220" d="M74 56h6v7h-6z M85 56h6v7h-6z M74 68h6v7h-6z M85 68h6v7h-6z"/>
+    <path fill="#f1b75d" d="M12 82c18-10 64-10 84 0-20 4-64 4-84 0Z"/>
+    <path fill="#0b1220" d="M15 82c20-4 57-4 78 0-20 6-59 6-78 0Z"/>
+    <path fill="#ffdc9b" d="M52 82h7l6 10H46z"/>
+  </g>
+</svg>

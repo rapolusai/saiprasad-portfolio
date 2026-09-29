@@ -459,7 +459,7 @@ input:focus, textarea:focus, select:focus { border-color: rgba(112,140,255,.5); 
 /* ParkingPilotAI product and compliance pages */
 .ppai-page { --ppai-green: #54d6a0; --ppai-green-soft: #a8f2cf; --ppai-bg: #08110d; --ppai-panel: #101c16; --ppai-line: rgba(136,236,190,.16); color: #edf8f2; background: radial-gradient(circle at 82% 4%,rgba(45,170,112,.15),transparent 30rem),radial-gradient(circle at 5% 35%,rgba(61,119,99,.13),transparent 27rem),var(--ppai-bg); }
 .apartmentcare-page { --ppai-green: #f1b75d; --ppai-green-soft: #ffdc9b; --ppai-bg: #0b1220; --ppai-panel: #151e2e; --ppai-line: rgba(241,183,93,.2); color: #f4f1e9; background: radial-gradient(circle at 82% 4%,rgba(193,133,55,.16),transparent 30rem),radial-gradient(circle at 5% 35%,rgba(73,95,139,.18),transparent 27rem),var(--ppai-bg); }
-.apartmentcare-page .ppai-brand__mark { color: #ffdc9b; background: rgba(241,183,93,.1); box-shadow: 0 12px 32px rgba(193,133,55,.2); font-size: 1.8rem; }
+.apartmentcare-page .ppai-brand__mark { background: rgba(241,183,93,.1); box-shadow: 0 12px 32px rgba(193,133,55,.2); }
 .apartmentcare-page .ppai-hero__panel { background: linear-gradient(155deg,rgba(28,38,58,.96),rgba(12,19,33,.98)); }
 .apartmentcare-page .ppai-live span { box-shadow: 0 0 0 5px rgba(241,183,93,.1),0 0 22px var(--ppai-green); }
 .apartmentcare-page .ppai-trust { background: rgba(20,29,45,.86); }
