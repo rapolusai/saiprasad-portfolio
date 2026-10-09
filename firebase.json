@@ -17,6 +17,7 @@
       { "source": "/parkingpilotai/terms", "destination": "/parkingpilotai/terms.html" },
       { "source": "/parkingpilotai/refund", "destination": "/parkingpilotai/refund.html" },
       { "source": "/parkingpilotai/contact", "destination": "/parkingpilotai/contact.html" },
+      { "source": "/parkingpilotai/delete-account", "destination": "/parkingpilotai/delete-account.html" },
       { "source": "/apartmentcare", "destination": "/apartmentcare/index.html" },
       { "source": "/apartmentcare/privacy", "destination": "/apartmentcare/privacy.html" },
       { "source": "/apartmentcare/terms", "destination": "/apartmentcare/terms.html" },
