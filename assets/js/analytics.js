@@ -1,6 +1,6 @@
 /* Google Analytics 4 — loads only after the visitor accepts. */
 (function () {
-  var ID = "G-0C7L2R5MDW";
+  var ID = "G-F4ZBDVZBVN";
   var KEY = "rapolus-analytics-consent";
   var get = function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
   var set = function (v) { try { localStorage.setItem(KEY, v); } catch (e) {} };
