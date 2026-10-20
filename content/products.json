@@ -12,7 +12,7 @@
         "Flexible receipts",
         "Usage and collections"
       ],
-      "href": "parkingpilotai/",
+      "href": "parkingpilotai/index.html",
       "logo": "assets/brand/parkingpilot-logo.png",
       "theme": "green",
       "platforms": [
@@ -22,15 +22,15 @@
       "links": [
         {
           "label": "Privacy",
-          "href": "parkingpilotai/privacy"
+          "href": "parkingpilotai/privacy.html"
         },
         {
           "label": "Terms",
-          "href": "parkingpilotai/terms"
+          "href": "parkingpilotai/terms.html"
         },
         {
           "label": "Support",
-          "href": "parkingpilotai/contact"
+          "href": "parkingpilotai/contact.html"
         }
       ]
     },
@@ -46,7 +46,7 @@
         "Maintenance tracking",
         "Community operations"
       ],
-      "href": "apartmentcare/",
+      "href": "apartmentcare/index.html",
       "logo": "assets/brand/apartmentcare-icon.svg",
       "theme": "amber",
       "platforms": [
@@ -56,15 +56,15 @@
       "links": [
         {
           "label": "Privacy",
-          "href": "apartmentcare/privacy"
+          "href": "apartmentcare/privacy.html"
         },
         {
           "label": "Terms",
-          "href": "apartmentcare/terms"
+          "href": "apartmentcare/terms.html"
         },
         {
           "label": "Support",
-          "href": "apartmentcare/contact"
+          "href": "apartmentcare/contact.html"
         }
       ]
     },
@@ -85,7 +85,7 @@
         "Web"
       ],
       "theme": "violet",
-      "href": "school-erp/"
+      "href": "school-erp/index.html"
     },
     {
       "id": "swimmer-club",
@@ -104,7 +104,7 @@
         "Web"
       ],
       "theme": "cyan",
-      "href": "swimmer-club/",
+      "href": "swimmer-club/index.html",
       "links": [
         {
           "label": "Case study",
