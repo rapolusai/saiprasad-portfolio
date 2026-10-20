@@ -36,7 +36,16 @@
       <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
     </button>
     <nav class="site-nav" id="site-nav" data-nav aria-label="Primary navigation">
-      <a href="#products">Products</a>
+      <div class="nav-dropdown" data-dropdown>
+        <button class="nav-dropdown__toggle" type="button" aria-expanded="false" aria-controls="products-menu" data-dropdown-toggle>Products <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="nav-dropdown__menu" id="products-menu">
+          <a class="nav-dropdown__item nav-dropdown__item--green" href="parkingpilotai/"><img src="assets/brand/parkingpilot-logo.png" alt=""><span><strong>ParkingPilotAI</strong><small>Parking operations</small></span><b class="chip chip--live">Live</b></a>
+          <a class="nav-dropdown__item nav-dropdown__item--amber" href="apartmentcare/"><img src="assets/brand/apartmentcare-icon.svg" alt=""><span><strong>ApartmentCare</strong><small>Apartment community management</small></span><b class="chip">Building</b></a>
+          <a class="nav-dropdown__item nav-dropdown__item--violet" href="school-erp/"><span class="nav-dropdown__glyph">SE</span><span><strong>School ERP</strong><small>School administration</small></span><b class="chip">Building</b></a>
+          <a class="nav-dropdown__item nav-dropdown__item--cyan" href="swimmer-club/"><span class="nav-dropdown__glyph">SC</span><span><strong>Swimmer Club</strong><small>Sports club operations</small></span><b class="chip">Building</b></a>
+          <a class="nav-dropdown__all" href="#products">View all products →</a>
+        </div>
+      </div>
       <a href="#industries">Industries</a>
       <a href="#platform">Platform</a>
       <a href="#services">Services</a>
@@ -70,10 +79,10 @@
         <div class="suite__panel">
           <div class="suite__bar"><span></span><span></span><span></span><small>rapolus / product suite</small></div>
           <ul class="suite__list">
-            <li class="suite__item suite__item--green"><img src="assets/brand/parkingpilot-logo.png" alt=""><div><strong>ParkingPilotAI</strong><small>Parking operations</small></div><b class="chip chip--live">Live</b></li>
-            <li class="suite__item suite__item--amber"><img src="assets/brand/apartmentcare-icon.svg" alt=""><div><strong>ApartmentCare</strong><small>Community management</small></div><b class="chip">Building</b></li>
-            <li class="suite__item suite__item--violet"><span class="suite__glyph">SE</span><div><strong>School ERP</strong><small>School administration</small></div><b class="chip">Building</b></li>
-            <li class="suite__item suite__item--cyan"><span class="suite__glyph">SC</span><div><strong>Swimmer Club</strong><small>Sports club operations</small></div><b class="chip">Building</b></li>
+            <li><a class="suite__item suite__item--green" href="parkingpilotai/"><img src="assets/brand/parkingpilot-logo.png" alt=""><div><strong>ParkingPilotAI</strong><small>Parking operations</small></div><b class="chip chip--live">Live</b></a></li>
+            <li><a class="suite__item suite__item--amber" href="apartmentcare/"><img src="assets/brand/apartmentcare-icon.svg" alt=""><div><strong>ApartmentCare</strong><small>Community management</small></div><b class="chip">Building</b></a></li>
+            <li><a class="suite__item suite__item--violet" href="school-erp/"><span class="suite__glyph">SE</span><div><strong>School ERP</strong><small>School administration</small></div><b class="chip">Building</b></a></li>
+            <li><a class="suite__item suite__item--cyan" href="swimmer-club/"><span class="suite__glyph">SC</span><div><strong>Swimmer Club</strong><small>Sports club operations</small></div><b class="chip">Building</b></a></li>
           </ul>
           <div class="suite__foot"><span><i></i> Android · Web · Tablet</span><span>One team, one standard</span></div>
         </div>
@@ -110,8 +119,8 @@
       <div class="industry-grid">
         <a class="industry reveal" href="parkingpilotai/"><span class="industry__num">01</span><h3>Parking &amp; venues</h3><p>Theatres, malls and parking lots tracking vehicle entry, exit, receipts and daily collections.</p><b>ParkingPilotAI ↗</b></a>
         <a class="industry reveal" href="apartmentcare/"><span class="industry__num">02</span><h3>Residential communities</h3><p>Apartment associations handling residents, maintenance requests, notices and bookings.</p><b>ApartmentCare ↗</b></a>
-        <a class="industry reveal" href="contact.html"><span class="industry__num">03</span><h3>Education</h3><p>Schools managing admissions, student records, attendance, fees and parent updates.</p><b>School ERP ↗</b></a>
-        <a class="industry reveal" href="project.html?slug=swimmer-club-management"><span class="industry__num">04</span><h3>Sports &amp; fitness</h3><p>Swimming and training centres running members, check-ins, trainers and fees.</p><b>Swimmer Club ↗</b></a>
+        <a class="industry reveal" href="school-erp/"><span class="industry__num">03</span><h3>Education</h3><p>Schools managing admissions, student records, attendance, fees and parent updates.</p><b>School ERP ↗</b></a>
+        <a class="industry reveal" href="swimmer-club/"><span class="industry__num">04</span><h3>Sports &amp; fitness</h3><p>Swimming and training centres running members, check-ins, trainers and fees.</p><b>Swimmer Club ↗</b></a>
       </div>
     </section>
 
@@ -227,8 +236,8 @@
       <h4>Products</h4>
       <a href="parkingpilotai/">ParkingPilotAI</a>
       <a href="apartmentcare/">ApartmentCare</a>
-      <a href="contact.html">School ERP</a>
-      <a href="project.html?slug=swimmer-club-management">Swimmer Club</a>
+      <a href="school-erp/">School ERP</a>
+      <a href="swimmer-club/">Swimmer Club</a>
     </nav>
     <nav class="co-footer__col" aria-label="Product policies">
       <h4>Policies</h4>

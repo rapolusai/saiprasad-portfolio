@@ -756,3 +756,42 @@ body.rapolus ::selection { color: #fff; background: var(--accent); }
 .rapolus .section-heading h2, .rapolus .about-sticky h2 { font-size: clamp(2.1rem, 4vw, 3.6rem); line-height: 1.05; }
 .rapolus .co-hero h1 em { padding-right: .04em; }
 @media (max-width: 760px) { .rapolus .section:not(.hero):not(.contact), .rapolus .product-showcase, .rapolus .about { width: min(100% - 2rem, 1320px); } }
+
+/* School ERP and Swimmer Club product pages (same layout as other product pages) */
+.ppai-brand__mark--text { color: var(--ppai-green); font: 700 1rem "Space Grotesk", sans-serif; border: 1px solid var(--ppai-line); }
+.schoolerp-page { --ppai-green: #a48bff; --ppai-green-soft: #d3c7ff; --ppai-bg: #0d0b1f; --ppai-panel: #17142e; --ppai-line: rgba(164,139,255,.2); color: #f1eefc; background: radial-gradient(circle at 82% 4%,rgba(124,96,230,.18),transparent 30rem),radial-gradient(circle at 5% 35%,rgba(73,95,160,.16),transparent 27rem),var(--ppai-bg); }
+.swimmer-page { --ppai-green: #3cc8ff; --ppai-green-soft: #a8e6ff; --ppai-bg: #07121d; --ppai-panel: #0f1d2c; --ppai-line: rgba(60,200,255,.18); color: #ecf7fc; background: radial-gradient(circle at 82% 4%,rgba(40,150,210,.18),transparent 30rem),radial-gradient(circle at 5% 35%,rgba(47,134,255,.12),transparent 27rem),var(--ppai-bg); }
+.schoolerp-page .ppai-hero__panel, .swimmer-page .ppai-hero__panel { background: linear-gradient(155deg,color-mix(in srgb,var(--ppai-panel) 96%,transparent),color-mix(in srgb,var(--ppai-bg) 98%,transparent)); }
+.schoolerp-page .ppai-trust, .swimmer-page .ppai-trust { background: color-mix(in srgb,var(--ppai-panel) 88%,transparent); }
+.schoolerp-page .ppai-section, .swimmer-page .ppai-section { background: linear-gradient(150deg,color-mix(in srgb,var(--ppai-panel) 92%,transparent),color-mix(in srgb,var(--ppai-bg) 85%,transparent)); }
+.schoolerp-page .ppai-card, .swimmer-page .ppai-card { background: rgba(255,255,255,.025); }
+.schoolerp-page .ppai-notice, .swimmer-page .ppai-notice { border-color: var(--ppai-line); background: color-mix(in srgb,var(--ppai-green) 6%,transparent); }
+.schoolerp-page .button--primary, .swimmer-page .button--primary { color: #050a17; background: var(--ppai-green); }
+.schoolerp-page .ppai-live span, .swimmer-page .ppai-live span { box-shadow: 0 0 0 5px color-mix(in srgb,var(--ppai-green) 12%,transparent),0 0 22px var(--ppai-green); }
+
+/* Products dropdown in the company header */
+.nav-dropdown { position: relative; }
+.nav-dropdown__toggle { display: inline-flex; align-items: center; gap: .35rem; padding: 0; border: 0; background: none; color: #c8cad2; font: inherit; cursor: pointer; }
+.nav-dropdown__toggle:hover, .nav-dropdown.is-open .nav-dropdown__toggle { color: var(--accent-soft); }
+.nav-dropdown__toggle svg { width: .7rem; height: .7rem; transition: transform .2s; }
+.nav-dropdown.is-open .nav-dropdown__toggle svg { transform: rotate(180deg); }
+.nav-dropdown__menu { position: absolute; top: calc(100% + 1rem); left: 50%; z-index: 40; width: 380px; padding: .6rem; border: 1px solid rgba(160,190,255,.16); border-radius: 1.1rem; background: rgba(9,15,32,.98); box-shadow: 0 30px 80px rgba(0,0,0,.5); backdrop-filter: blur(18px); opacity: 0; visibility: hidden; transform: translate(-50%, -6px); transition: opacity .18s, transform .18s, visibility .18s; }
+.nav-dropdown__menu::before { content: ""; position: absolute; top: -1rem; left: 0; right: 0; height: 1rem; }
+.nav-dropdown.is-open .nav-dropdown__menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+@media (hover: hover) and (min-width: 761px) { .nav-dropdown:hover .nav-dropdown__menu, .nav-dropdown:focus-within .nav-dropdown__menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); } }
+.nav-dropdown__item { --tone: #2f86ff; display: grid !important; grid-template-columns: 2.6rem 1fr auto; align-items: center; gap: .8rem; padding: .65rem .7rem !important; border-radius: .75rem; color: var(--text) !important; }
+.nav-dropdown__item:hover { background: rgba(255,255,255,.05); }
+.nav-dropdown__item img, .nav-dropdown__glyph { width: 2.6rem; height: 2.6rem; border-radius: .7rem; object-fit: contain; background: rgba(255,255,255,.04); }
+.nav-dropdown__glyph { display: grid; place-items: center; color: var(--tone); border: 1px solid color-mix(in srgb, var(--tone) 40%, transparent); font: 700 .78rem "Space Grotesk", sans-serif; }
+.nav-dropdown__item strong { display: block; font: 600 .88rem "Space Grotesk", sans-serif; }
+.nav-dropdown__item small { display: block; color: var(--muted); font-size: .72rem; font-weight: 500; }
+.nav-dropdown__item .chip { font-size: .52rem; }
+.nav-dropdown__item--green { --tone: #54d6a0; } .nav-dropdown__item--amber { --tone: #f1b75d; } .nav-dropdown__item--violet { --tone: #a48bff; } .nav-dropdown__item--cyan { --tone: #3cc8ff; }
+.nav-dropdown__all { display: block; margin-top: .4rem; padding: .7rem !important; border-top: 1px solid var(--line); color: var(--accent-soft) !important; font: 600 .74rem "DM Mono", monospace; text-transform: uppercase; letter-spacing: .06em; text-align: center; }
+@media (max-width: 760px) {
+  .nav-dropdown__toggle { width: 100%; justify-content: space-between; padding: .8rem; }
+  .nav-dropdown__menu { position: static; width: auto; display: none; margin: 0 0 .4rem; padding: .3rem; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: rgba(255,255,255,.03); }
+  .nav-dropdown.is-open .nav-dropdown__menu { display: block; transform: none; }
+}
+.suite__list > li > a.suite__item { color: inherit; }
+@media (max-width: 760px) { .rapolus .site-nav { background: #070b16; max-height: calc(100vh - 4.5rem); overflow-y: auto; } }

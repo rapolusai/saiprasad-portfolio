@@ -20,6 +20,19 @@ menuButton?.addEventListener("click", () => {
   const open = navigation.classList.toggle("is-open");
   menuButton.setAttribute("aria-expanded", String(open));
 });
+const dropdown = document.querySelector("[data-dropdown]");
+const dropdownToggle = dropdown?.querySelector("[data-dropdown-toggle]");
+const setDropdown = (open) => {
+  dropdown?.classList.toggle("is-open", open);
+  dropdownToggle?.setAttribute("aria-expanded", String(open));
+};
+dropdownToggle?.addEventListener("click", (event) => {
+  event.stopPropagation();
+  setDropdown(!dropdown.classList.contains("is-open"));
+});
+document.addEventListener("click", (event) => { if (dropdown && !dropdown.contains(event.target)) setDropdown(false); });
+document.addEventListener("keydown", (event) => { if (event.key === "Escape") { setDropdown(false); dropdownToggle?.focus(); } });
+
 navigation?.addEventListener("click", (event) => {
   if (event.target.closest("a")) {
     navigation.classList.remove("is-open");
@@ -145,7 +158,7 @@ function renderProducts(products) {
     const features = (product.features || []).slice(0, 4);
     const links = (product.links || []).map((link) => ({ label: link.label, href: safeUrl(link.href) })).filter((link) => link.href);
     const logo = product.logo ? `<img src="${escapeHtml(absoluteAsset(product.logo))}" alt="" loading="lazy">` : `<span>${escapeHtml(initials(product.name))}</span>`;
-    const cta = href.includes("contact") ? "Register interest" : href.includes("project.html") ? "Read the case study" : "Explore product";
+    const cta = "View product details";
     return `<article class="co-product co-product--${theme} reveal">
       <div class="co-product__top">
         <div class="co-product__logo" aria-hidden="true">${logo}</div>

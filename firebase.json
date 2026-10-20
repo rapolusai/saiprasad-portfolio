@@ -22,7 +22,9 @@
       { "source": "/apartmentcare/privacy", "destination": "/apartmentcare/privacy.html" },
       { "source": "/apartmentcare/terms", "destination": "/apartmentcare/terms.html" },
       { "source": "/apartmentcare/refund", "destination": "/apartmentcare/refund.html" },
-      { "source": "/apartmentcare/contact", "destination": "/apartmentcare/contact.html" }
+      { "source": "/apartmentcare/contact", "destination": "/apartmentcare/contact.html" },
+      { "source": "/school-erp", "destination": "/school-erp/index.html" },
+      { "source": "/swimmer-club", "destination": "/swimmer-club/index.html" }
     ],
     "headers": [
       {
