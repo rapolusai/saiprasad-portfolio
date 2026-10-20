@@ -795,3 +795,7 @@ body.rapolus ::selection { color: #fff; background: var(--accent); }
 }
 .suite__list > li > a.suite__item { color: inherit; }
 @media (max-width: 760px) { .rapolus .site-nav { background: #070b16; max-height: calc(100vh - 4.5rem); overflow-y: auto; } }
+
+/* Safety net: if scripts cannot run, show all content instead of a blank page */
+html.no-script-fallback .reveal { opacity: 1; transform: none; }
+.file-notice { position: fixed; left: 50%; bottom: 1rem; z-index: 90; max-width: min(92vw, 640px); padding: .8rem 1.1rem; transform: translateX(-50%); border: 1px solid rgba(247,148,29,.45); border-radius: .8rem; color: #ffe2b8; background: rgba(20,14,6,.95); font: 500 .78rem/1.5 "Inter", system-ui, sans-serif; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,.45); }

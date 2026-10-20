@@ -1,5 +1,6 @@
 import { absoluteAsset, escapeHtml, fetchJson, initializeCommon, initials, projectHref, safeUrl, SITE_PATH, CONTENT_PATH, PRODUCTS_PATH } from "./shared.js?v=portfolio-products-20260920-2";
 
+window.__siteReady = true;
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const navigation = document.querySelector("[data-nav]");

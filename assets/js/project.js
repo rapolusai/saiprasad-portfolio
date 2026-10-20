@@ -1,5 +1,6 @@
 import { absoluteAsset, escapeHtml, fetchJson, initializeCommon, initials, safeUrl, SITE_PATH, CONTENT_PATH } from "./shared.js";
 
+window.__siteReady = true;
 const root = document.querySelector("[data-project-story]");
 const slug = new URLSearchParams(window.location.search).get("slug");
 

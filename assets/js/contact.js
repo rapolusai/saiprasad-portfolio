@@ -1,5 +1,6 @@
 import { fetchJson, initializeCommon, SITE_PATH } from "./shared.js";
 
+window.__siteReady = true;
 const form = document.querySelector("[data-contact-form]");
 const status = document.querySelector("[data-contact-status]");
 const project = new URLSearchParams(window.location.search).get("project");

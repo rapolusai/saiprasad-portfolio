@@ -10,6 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css?v=rapolus-company-20261020">
   <link rel="icon" href="favicon.png" type="image/png">
+  <script>
+    /* If scripts can't run (e.g. page opened straight from a folder), never leave the page blank. */
+    setTimeout(function () {
+      if (window.__siteReady) return;
+      document.documentElement.classList.add("no-script-fallback");
+      if (location.protocol === "file:" && !document.querySelector(".file-notice")) {
+        var n = document.createElement("div"); n.className = "file-notice";
+        n.textContent = "Preview tip: open this site with start-preview.bat (or run: node scripts/serve.mjs) so products and case studies load.";
+        document.body.appendChild(n);
+      }
+    }, 1200);
+  </script>
 </head>
 <body class="project-page rapolus">
   <a class="skip-link" href="#main">Skip to content</a>
