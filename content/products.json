@@ -6,8 +6,33 @@
       "status": "Live",
       "category": "Parking operations platform",
       "summary": "Mobile-first vehicle entry, exit, acknowledgements, collections, teams, and reporting for theatre and non-theatre parking locations.",
-      "features": ["Android first", "Role-based operations", "Flexible receipts", "Usage and collections"],
-      "href": "/parkingpilotai"
+      "features": [
+        "Android first",
+        "Role-based operations",
+        "Flexible receipts",
+        "Usage and collections"
+      ],
+      "href": "parkingpilotai/index.html",
+      "logo": "assets/brand/parkingpilot-logo.png",
+      "theme": "green",
+      "platforms": [
+        "Android"
+      ],
+      "industry": "Parking & venues",
+      "links": [
+        {
+          "label": "Privacy",
+          "href": "parkingpilotai/privacy.html"
+        },
+        {
+          "label": "Terms",
+          "href": "parkingpilotai/terms.html"
+        },
+        {
+          "label": "Support",
+          "href": "parkingpilotai/contact.html"
+        }
+      ]
     },
     {
       "id": "apartmentcare",
@@ -15,8 +40,77 @@
       "status": "In development",
       "category": "Apartment community management",
       "summary": "A mobile-first apartment operations app for resident onboarding, maintenance requests, community notices, bookings, and transparent building administration.",
-      "features": ["Android first", "Resident and admin workflows", "Maintenance tracking", "Community operations"],
-      "href": "/apartmentcare"
+      "features": [
+        "Android first",
+        "Resident and admin workflows",
+        "Maintenance tracking",
+        "Community operations"
+      ],
+      "href": "apartmentcare/index.html",
+      "logo": "assets/brand/apartmentcare-icon.svg",
+      "theme": "amber",
+      "platforms": [
+        "Android"
+      ],
+      "industry": "Residential communities",
+      "links": [
+        {
+          "label": "Privacy",
+          "href": "apartmentcare/privacy.html"
+        },
+        {
+          "label": "Terms",
+          "href": "apartmentcare/terms.html"
+        },
+        {
+          "label": "Support",
+          "href": "apartmentcare/contact.html"
+        }
+      ]
+    },
+    {
+      "id": "school-erp",
+      "name": "School ERP",
+      "status": "In development",
+      "category": "School management platform",
+      "industry": "Education",
+      "summary": "A web platform for schools to run admissions, student records, attendance, fees, and parent communication from one place, designed for desktop, tablet, and mobile.",
+      "features": [
+        "Web, tablet & mobile",
+        "Admissions and records",
+        "Attendance and fees",
+        "Parent communication"
+      ],
+      "platforms": [
+        "Web"
+      ],
+      "theme": "violet",
+      "href": "school-erp/index.html"
+    },
+    {
+      "id": "swimmer-club",
+      "name": "Swimmer Club",
+      "status": "In development",
+      "category": "Sports club management",
+      "industry": "Sports & fitness",
+      "summary": "Operations software for swimming and training centres covering members, attendance with QR check-in, trainers, fees, inventory, and reports.",
+      "features": [
+        "QR check-in",
+        "Members and trainers",
+        "Fees and expenses",
+        "Operational reports"
+      ],
+      "platforms": [
+        "Web"
+      ],
+      "theme": "cyan",
+      "href": "swimmer-club/index.html",
+      "links": [
+        {
+          "label": "Case study",
+          "href": "project.html?slug=swimmer-club-management"
+        }
+      ]
     }
   ]
 }

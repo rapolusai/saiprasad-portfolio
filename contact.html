@@ -4,29 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0c12">
-  <meta name="description" content="Contact senior software engineer Rapolu`s about engineering roles, architecture consulting, or product development.">
-  <title>Contact — Rapolu`s</title>
+  <meta name="description" content="Contact Rapolus IT Services for product demos, support for ParkingPilotAI, ApartmentCare, School ERP and Swimmer Club, or custom software development.">
+  <title>Contact — Rapolus IT Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=rapolus-company-20261020">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script>
+    /* If scripts can't run (e.g. page opened straight from a folder), never leave the page blank. */
+    setTimeout(function () {
+      if (window.__siteReady) return;
+      document.documentElement.classList.add("no-script-fallback");
+      if (location.protocol === "file:" && !document.querySelector(".file-notice")) {
+        var n = document.createElement("div"); n.className = "file-notice";
+        n.textContent = "Preview tip: open this site with start-preview.bat (or run: node scripts/serve.mjs) so products and case studies load.";
+        document.body.appendChild(n);
+      }
+    }, 1200);
+  </script>
 </head>
-<body class="contact-page">
+<body class="contact-page rapolus">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page-glow page-glow--one"></div><div class="page-glow page-glow--two"></div>
   <header class="site-header is-solid">
-    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span>R</span><i></i></span><span class="brand-copy"><strong>Rapolu`s</strong><small>Software Engineer</small></span></a>
-    <nav class="project-nav" aria-label="Contact navigation"><a href="index.html">← Home</a><a href="index.html#work">View projects</a></nav>
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/brand/rapolus-mark.png" alt="" width="44" height="44"><span class="brand-copy"><strong>Rapolus</strong><small>IT Services</small></span></a>
+    <nav class="project-nav" aria-label="Contact navigation"><a href="index.html">← Home</a><a href="index.html#products">Products</a></nav>
   </header>
 
   <main id="main" class="contact-page__main">
     <section class="contact-page__intro reveal">
-      <p class="eyebrow"><span class="status-dot"></span> Open to meaningful conversations</p>
-      <h1>Let’s build something<br><em>worth relying on.</em></h1>
-      <p>Tell me about the engineering challenge, role, or product you’re exploring. I’ll reply with a practical next step.</p>
+      <p class="eyebrow"><span class="status-dot"></span> Sales, support &amp; partnerships</p>
+      <h1>Talk to the team<br><em>behind the products.</em></h1>
+      <p>Request a demo, ask a support question about any Rapolus product, or tell us about a custom project. We reply with a practical next step.</p>
       <div class="contact-details" aria-label="Contact details">
-        <a href="mailto:rajinirapolus@gamil.com"><small>Email</small><strong>rajinirapolus@gamil.com</strong><span>↗</span></a>
-        <a href="tel:+919963659143"><small>Phone</small><strong>+91 99636 59143</strong><span>↗</span></a>
+        <a href="mailto:support@rapolu.in"><small>Email</small><strong>support@rapolu.in</strong><span>↗</span></a>
+        <a href="tel:+919144715553"><small>Phone</small><strong>+91 91447 15553</strong><span>↗</span></a>
         <div><small>Based in</small><strong>Hyderabad, India</strong><span>IST</span></div>
       </div>
       <div class="contact-profile-links">
@@ -35,22 +48,23 @@
     </section>
 
     <section class="contact-form-card reveal" aria-labelledby="contact-form-title">
-      <div class="contact-form-card__heading"><p class="mono-label">PROJECT ENQUIRY / 01</p><h2 id="contact-form-title">Start the conversation.</h2><p>No account required. Submitting opens a prepared email in your mail application.</p></div>
+      <div class="contact-form-card__heading"><p class="mono-label">ENQUIRY / 01</p><h2 id="contact-form-title">Send us a message.</h2><p>No account required. Submitting opens a prepared email in your mail application.</p></div>
       <form data-contact-form>
         <div class="contact-form-grid">
-          <label>Your name<input name="name" autocomplete="name" placeholder="How should I address you?" required></label>
+          <label>Your name<input name="name" autocomplete="name" placeholder="Your full name" required></label>
           <label>Your email<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required></label>
           <label class="span-2">What would you like to discuss?
             <select name="topic" required>
               <option value="">Choose a topic</option>
-              <option>Senior engineering opportunity</option>
-              <option>Architecture or technical consulting</option>
-              <option>Product development</option>
-              <option>Project collaboration</option>
+              <option>Product demo</option>
+              <option>Product support</option>
+              <option>School ERP — register interest</option>
+              <option>Custom software development</option>
+              <option>Partnership</option>
               <option>Something else</option>
             </select>
           </label>
-          <label class="span-2">Project or message<textarea name="message" rows="7" placeholder="Share the context, challenge, timeline, or outcome you have in mind." required></textarea></label>
+          <label class="span-2">Message<textarea name="message" rows="7" placeholder="Which product, your organisation, and what you need help with." required></textarea></label>
         </div>
         <div class="contact-form-footer"><p>Your message stays on your device until your email application opens.</p><button class="button button--primary" type="submit">Prepare email <span>↗</span></button></div>
         <p class="contact-form-status" data-contact-status role="status" aria-live="polite"></p>
@@ -59,7 +73,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span>R</span><i></i></span><span class="brand-copy"><strong>Rapolu`s</strong><small>Engineering with intent.</small></span></a><p>© <span data-year></span> Rapolu`s.</p><a href="admin.html" class="admin-link">Studio</a></footer>
+  <footer class="site-footer"><a class="brand" href="index.html"><img class="brand-logo" src="assets/brand/rapolus-mark.png" alt="" width="44" height="44"><span class="brand-copy"><strong>Rapolus</strong><small>IT Services</small></span></a><p>© <span data-year></span> Rapolus IT Services.</p><a href="admin.html" class="admin-link">Studio</a></footer>
   <script type="module" src="assets/js/contact.js"></script>
 </body>
 </html>

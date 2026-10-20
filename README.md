@@ -1,4 +1,4 @@
-# Rapolu`s — Portfolio
+# Rapolus IT Services — Portfolio
 
 A fast, dependency-free portfolio with detailed project stories and a GitHub-backed publishing studio. The public site is static; updates are versioned as normal Git commits and deployed automatically.
 
