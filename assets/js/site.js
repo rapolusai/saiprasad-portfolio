@@ -140,14 +140,26 @@ function renderProducts(products) {
   }
   productGrid.innerHTML = published.map((product, index) => {
     const href = safeUrl(product.href || "#") || "#";
+    const live = product.status?.toLowerCase() === "live";
+    const theme = /^[a-z]+$/.test(product.theme || "") ? product.theme : "blue";
     const features = (product.features || []).slice(0, 4);
-    return `<a class="product-showcase__card reveal" href="${escapeHtml(href)}">
-      <div class="product-showcase__visual" aria-hidden="true"><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(initials(product.name))}</strong><i></i></div>
-      <div class="product-showcase__body">
-        <div class="product-showcase__meta"><span>${escapeHtml(product.category || "Product")}</span><b>${escapeHtml(product.status)}</b></div>
-        <h3>${escapeHtml(product.name)}</h3><p>${escapeHtml(product.summary)}</p>
-        <div class="product-showcase__footer"><div class="tag-list">${features.map((feature) => `<span>${escapeHtml(feature)}</span>`).join("")}</div><strong>Explore product ↗</strong></div>
-      </div></a>`;
+    const links = (product.links || []).map((link) => ({ label: link.label, href: safeUrl(link.href) })).filter((link) => link.href);
+    const logo = product.logo ? `<img src="${escapeHtml(absoluteAsset(product.logo))}" alt="" loading="lazy">` : `<span>${escapeHtml(initials(product.name))}</span>`;
+    const cta = href.includes("contact") ? "Register interest" : href.includes("project.html") ? "Read the case study" : "Explore product";
+    return `<article class="co-product co-product--${theme} reveal">
+      <div class="co-product__top">
+        <div class="co-product__logo" aria-hidden="true">${logo}</div>
+        <b class="chip ${live ? "chip--live" : ""}">${escapeHtml(live ? "Live" : product.status)}</b>
+      </div>
+      <p class="co-product__cat"><span>${String(index + 1).padStart(2, "0")}</span> ${escapeHtml(product.industry || product.category || "Product")}</p>
+      <h3>${escapeHtml(product.name)}</h3>
+      <p class="co-product__summary">${escapeHtml(product.summary)}</p>
+      <ul class="co-product__features">${features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>
+      <div class="co-product__foot">
+        <a class="co-product__cta" href="${escapeHtml(href)}">${cta} <span>↗</span></a>
+        ${links.length ? `<nav class="co-product__links" aria-label="${escapeHtml(product.name)} links">${links.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a>`).join("")}</nav>` : `<small>${escapeHtml((product.platforms || []).join(" · "))}</small>`}
+      </div>
+    </article>`;
   }).join("");
   productGrid.querySelectorAll(".reveal").forEach((node) => revealObserver.observe(node));
 }

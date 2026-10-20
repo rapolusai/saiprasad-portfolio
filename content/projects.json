@@ -13,7 +13,14 @@
       "year": "2026",
       "role": "Product architect & engineer",
       "timeline": "Active development",
-      "technologies": ["Java 21", "JavaFX", "Spring Boot", "MySQL", "OSHI", "Liquibase"],
+      "technologies": [
+        "Java 21",
+        "JavaFX",
+        "Spring Boot",
+        "MySQL",
+        "OSHI",
+        "Liquibase"
+      ],
       "challenge": "Infrastructure monitoring becomes difficult to reason about when projects, environments, hosts, metric history, alerts, and reporting live in separate tools. SRM needed to make a large monitoring surface understandable from one desktop workspace while remaining responsive during continuous collection. It also needed to distinguish unsupported readings from genuine zero values, retain useful history without unbounded storage, and support both local machines today and a larger remote-system model in the future.",
       "solution": "I designed SRM as a Spring Boot and JavaFX desktop application with a structured inventory of projects, Development/QA/UAT/Production environments, systems, and reusable monitoring profiles. OSHI provides capability-aware Windows and Linux collection for CPU, memory, disk, network, process, JVM, application-uptime, and connection-pool signals. Virtual-thread dispatch, a bounded ingestion queue, batched MySQL writes, fixed-size live buffers, and scheduled aggregation keep collection work away from the interface. Liquibase owns schema evolution. The workspace combines live dashboards, historical analysis, multi-system comparison, report generation, notification workflows, light/dark themes, and persistent application settings.",
       "outcome": "SRM now provides an end-to-end operational workspace rather than a collection of disconnected charts. Users can configure systems once, apply reusable profiles, watch current health, move back through raw or aggregated history, compare the same signal across machines, and generate PDF/CSV reports without blocking collection. The delivery pipeline verifies Java 21 builds on Windows and Linux, exercises MySQL integration through Testcontainers, runs CodeQL analysis, and prepares signed release artifacts from version tags.",
@@ -56,7 +63,16 @@
       "year": "2026",
       "role": "Product architect & engineer",
       "timeline": "Active development",
-      "technologies": ["Java 17", "JavaFX 21", "Spring Boot 3", "MySQL", "JPA", "Liquibase", "Twilio", "ZXing"],
+      "technologies": [
+        "Java 17",
+        "JavaFX 21",
+        "Spring Boot 3",
+        "MySQL",
+        "JPA",
+        "Liquibase",
+        "Twilio",
+        "ZXing"
+      ],
       "challenge": "Swimming training centers coordinate recurring memberships, daily attendance, trainer assignments, payments, operational expenses, inventory, and member communication. When those workflows are split between paper registers and disconnected spreadsheets, staff lose time, financial visibility becomes inconsistent, and member history is difficult to follow. The product needed to consolidate day-to-day club operations without making front-desk work slower or more complicated.",
       "solution": "I built Swimmer as a JavaFX desktop application backed by Spring Boot, Spring Data JPA, MySQL, and Liquibase. The interface is organized around focused controllers for the dashboard, member registration and profiles, live and historical attendance, professional and general trainers, inventory, expenses, sales, reports, gallery, administration, and help. QR-code capabilities use ZXing to support member identification and attendance workflows, while a companion Android scanner extends check-in beyond the desktop. Twilio supports SMS communication, and iText provides PDF generation for printable operational documents and reports.",
       "outcome": "Swimmer creates a single operational workspace for the club. Staff can register and search members, maintain profiles and ID cards, follow attendance history, manage trainers, record expenses and inventory, and review activity from a dashboard rather than reconciling separate records. The layered controller, service, repository, and model structure keeps interface workflows separate from persistence and business logic, creating a practical foundation for continued product development.",
@@ -95,16 +111,25 @@
       "summary": "A reference story for resilient, high-availability business systems designed around clear service boundaries and reliable delivery.",
       "category": "Enterprise architecture",
       "status": "published",
-      "featured": true,
+      "featured": false,
       "year": "2026",
       "role": "Senior engineer",
       "timeline": "Iterative delivery",
-      "technologies": ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "Docker"
+      ],
       "challenge": "Enterprise products often accumulate tightly coupled workflows, slow release cycles, and operational blind spots. The challenge is to improve scale and delivery confidence without interrupting the business processes users already depend on.",
       "solution": "Shape the platform around explicit domain boundaries, versioned APIs, measurable service-level goals, and an incremental migration path. Automate verification and deployment so each change is smaller, observable, and easier to reverse. Treat database design, failure handling, and production telemetry as first-class architecture concerns.",
       "outcome": "A platform direction that supports independent evolution, clearer ownership, and more predictable releases. This sample case study demonstrates the level of technical explanation future project stories will contain; replace it in the Studio with your real implementation details and metrics.",
       "future": "Extend the platform with event-driven integrations, workload-aware scaling, stronger developer self-service, and AI-assisted operational analysis where it produces measurable value.",
-      "highlights": ["Clear domain and service boundaries", "Automated build and release workflow", "Production signals designed with the feature"],
+      "highlights": [
+        "Clear domain and service boundaries",
+        "Automated build and release workflow",
+        "Production signals designed with the feature"
+      ],
       "images": [],
       "liveUrl": ""
     },
@@ -115,16 +140,25 @@
       "summary": "A full-stack product approach connecting responsive interfaces to secure APIs, practical automation, and maintainable delivery.",
       "category": "Product engineering",
       "status": "published",
-      "featured": true,
+      "featured": false,
       "year": "2026",
       "role": "Full-stack engineer",
       "timeline": "Product lifecycle",
-      "technologies": ["React", "TypeScript", "Spring Boot", "AWS"],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Spring Boot",
+        "AWS"
+      ],
       "challenge": "Modern products must feel simple to users while coordinating complex business rules, integrations, permissions, and data flows behind the interface.",
       "solution": "Begin with critical user journeys, establish a small reusable interface system, and design backend contracts around stable product capabilities. Keep accessibility, performance budgets, security, automated testing, and deployment inside the delivery process rather than treating them as finishing tasks.",
       "outcome": "A cohesive product foundation that can move from early validation to production scale without discarding the engineering practices that keep it reliable.",
       "future": "Add richer product analytics, targeted automation, and carefully scoped AI assistance while keeping user control and system transparency at the center.",
-      "highlights": ["Responsive and accessible interface foundation", "Secure, versioned API contracts", "End-to-end automated delivery"],
+      "highlights": [
+        "Responsive and accessible interface foundation",
+        "Secure, versioned API contracts",
+        "End-to-end automated delivery"
+      ],
       "images": [],
       "liveUrl": ""
     }

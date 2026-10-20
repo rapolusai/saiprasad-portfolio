@@ -5,7 +5,7 @@ const status = document.querySelector("[data-contact-status]");
 const project = new URLSearchParams(window.location.search).get("project");
 
 if (project && form) {
-  form.elements.topic.value = "Project collaboration";
+  form.elements.topic.value = "Custom software development";
   form.elements.message.value = `I’d like to discuss a project related to ${project}.\n\n`;
 }
 
@@ -18,9 +18,9 @@ form?.addEventListener("submit", (event) => {
   const topic = String(data.get("topic") || "Project enquiry").trim();
   const message = String(data.get("message") || "").trim();
   const subject = `${topic} — ${name}`;
-  const body = [`Hello Rapolu\`s,`, "", message, "", `From: ${name}`, `Reply to: ${email}`].join("\n");
+  const body = ["Hello Rapolus team,", "", message, "", `From: ${name}`, `Reply to: ${email}`].join("\n");
   status.textContent = "Opening your email application…";
-  window.location.href = `mailto:rajinirapolus@gamil.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:support@rapolu.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
 fetchJson(SITE_PATH).then(initializeCommon).catch(() => initializeCommon({}));
