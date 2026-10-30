@@ -12,7 +12,14 @@ createServer(async (request, response) => {
     let relative = normalize(pathname).replace(/^([/\\])+/, "") || "index.html";
     let file = join(root, relative);
     if (!file.startsWith(root)) throw new Error("Invalid path");
-    if ((await stat(file)).isDirectory()) file = join(file, "index.html");
+    let fileInfo;
+    try { fileInfo = await stat(file); }
+    catch (error) {
+      if (error.code !== "ENOENT" || extname(file)) throw error;
+      file += ".html";
+      fileInfo = await stat(file);
+    }
+    if (fileInfo.isDirectory()) file = join(file, "index.html");
     const body = await readFile(file);
     response.writeHead(200, { "Content-Type": types[extname(file).toLowerCase()] || "application/octet-stream", "Cache-Control": "no-store" });
     response.end(body);
