@@ -38,13 +38,13 @@
       "id": "apartmentcare",
       "name": "ApartmentCare",
       "status": "In development",
-      "category": "Apartment community management",
-      "summary": "A mobile-first apartment operations app for resident onboarding, maintenance requests, community notices, bookings, and transparent building administration.",
+      "category": "Apartment association management",
+      "summary": "An Android app for apartment associations: maintenance billing, payment proofs verified by the Treasurer, expenses and reports, notices, complaints and bookings, with separate Admin, Treasurer and Resident logins.",
       "features": [
         "Android first",
-        "Resident and admin workflows",
-        "Maintenance tracking",
-        "Community operations"
+        "Admin, Treasurer and Resident roles",
+        "Verified maintenance payments",
+        "First month free"
       ],
       "href": "apartmentcare/index.html",
       "logo": "assets/brand/apartmentcare-icon.svg",
@@ -61,6 +61,10 @@
         {
           "label": "Terms",
           "href": "apartmentcare/terms.html"
+        },
+        {
+          "label": "Delete account",
+          "href": "apartmentcare/delete-account.html"
         },
         {
           "label": "Support",
