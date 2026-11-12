@@ -77,7 +77,7 @@
       "name": "Tailor Book",
       "status": "In development",
       "category": "Tailor shop order book",
-      "summary": "A free, offline Android app for tailor shops and boutiques: customer measurements, orders and delivery dates, advance and balance payments, monthly expenses and one-tap WhatsApp messages, in English and Telugu.",
+      "summary": "An offline Android app for tailor shops and boutiques: customer measurements, orders and delivery dates, advance and balance payments, monthly expenses and one-tap WhatsApp messages, in English and Telugu.",
       "features": [
         "Android first",
         "Works offline",
@@ -99,6 +99,10 @@
         {
           "label": "Terms",
           "href": "tailorbook/terms.html"
+        },
+        {
+          "label": "Refunds",
+          "href": "tailorbook/refund.html"
         },
         {
           "label": "Support",
