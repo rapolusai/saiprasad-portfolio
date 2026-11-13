@@ -73,6 +73,44 @@
       ]
     },
     {
+      "id": "tailorbook",
+      "name": "Tailor Book",
+      "status": "In development",
+      "category": "Tailor shop order book",
+      "summary": "An offline Android app for tailor shops and boutiques: customer measurements, orders and delivery dates, advance and balance payments, monthly expenses and one-tap WhatsApp messages, in English and Telugu.",
+      "features": [
+        "Android first",
+        "Works offline",
+        "Measurements and orders",
+        "English and Telugu"
+      ],
+      "href": "tailorbook/index.html",
+      "logo": "assets/brand/tailorbook-icon.svg",
+      "theme": "amber",
+      "platforms": [
+        "Android"
+      ],
+      "industry": "Tailoring & boutiques",
+      "links": [
+        {
+          "label": "Privacy",
+          "href": "tailorbook/privacy.html"
+        },
+        {
+          "label": "Terms",
+          "href": "tailorbook/terms.html"
+        },
+        {
+          "label": "Refunds",
+          "href": "tailorbook/refund.html"
+        },
+        {
+          "label": "Support",
+          "href": "tailorbook/contact.html"
+        }
+      ]
+    },
+    {
       "id": "school-erp",
       "name": "School ERP",
       "status": "In development",

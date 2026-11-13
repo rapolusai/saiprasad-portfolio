@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 16 16" role="img" aria-labelledby="title">
+  <title id="title">Tailor Book</title>
+  <defs><linearGradient id="tb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F57C20"/><stop offset="1" stop-color="#E11D6B"/></linearGradient></defs>
+  <rect x="4" y="4" width="16" height="16" rx="2.1" fill="url(#tb)"/>
+  <g transform="translate(6 6) scale(0.5)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6,3a3,3 0,1 0,0.01 0z M6,15a3,3 0,1 0,0.01 0z M20,4L8.1,15.9 M14.5,14.5L20,20 M8.1,8.1L12,12"/>
+  </g>
+</svg>
