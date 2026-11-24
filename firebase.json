@@ -23,6 +23,7 @@
       { "source": "/apartmentcare/terms", "destination": "/apartmentcare/terms.html" },
       { "source": "/apartmentcare/refund", "destination": "/apartmentcare/refund.html" },
       { "source": "/apartmentcare/contact", "destination": "/apartmentcare/contact.html" },
+      { "source": "/apartmentcare/delete-account", "destination": "/apartmentcare/delete-account.html" },
       { "source": "/school-erp", "destination": "/school-erp/index.html" },
       { "source": "/swimmer-club", "destination": "/swimmer-club/index.html" }
     ],
