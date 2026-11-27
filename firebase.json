@@ -24,6 +24,12 @@
       { "source": "/apartmentcare/refund", "destination": "/apartmentcare/refund.html" },
       { "source": "/apartmentcare/contact", "destination": "/apartmentcare/contact.html" },
       { "source": "/apartmentcare/delete-account", "destination": "/apartmentcare/delete-account.html" },
+      { "source": "/mytransport", "destination": "/mytransport/index.html" },
+      { "source": "/mytransport/privacy", "destination": "/mytransport/privacy.html" },
+      { "source": "/mytransport/terms", "destination": "/mytransport/terms.html" },
+      { "source": "/mytransport/refund", "destination": "/mytransport/refund.html" },
+      { "source": "/mytransport/contact", "destination": "/mytransport/contact.html" },
+      { "source": "/mytransport/delete-account", "destination": "/mytransport/delete-account.html" },
       { "source": "/school-erp", "destination": "/school-erp/index.html" },
       { "source": "/swimmer-club", "destination": "/swimmer-club/index.html" }
     ],
