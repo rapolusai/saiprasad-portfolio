@@ -5,7 +5,6 @@ A fast, dependency-free portfolio with detailed project stories and a GitHub-bac
 ## What is included
 
 - Responsive modern portfolio with verified profile content
-- LinkedIn integration and a prepared GitHub profile link
 - Project/blog case studies with challenge, approach, outcome, future direction, highlights, links, and screenshot galleries
 - Owner-only `/admin.html` publishing studio for creating, editing, previewing, publishing, and removing stories
 - Atomic GitHub commits: a story and all its screens land in one commit
@@ -21,7 +20,6 @@ Edit `content/site.json`:
 {
   "resumeUrl": "assets/resume.pdf",
   "social": {
-    "linkedin": "https://in.linkedin.com/in/rapolusai",
     "github": "https://github.com/rapolusai"
   }
 }
